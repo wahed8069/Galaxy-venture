@@ -21,8 +21,8 @@ const BLOGS_DATABASE = [
 ];
 
 const TESTIMONIALS_DATABASE = [
-  { quote: "Galaxy Ventures guided me step-by-step through my transition from London to Dubai. Their DHA licensing and interview coaching got me a placement at a top clinic within three weeks.", author: "Dr. Sarah Jenkins", role: "Critical Care Nurse, Emirates Health Clinic", type: "candidate" },
-  { quote: "Finding qualified structural engineers with specific Middle East project exposure is always a challenge. Galaxy Ventures delivered a shortlist of three stellar candidates in days.", author: "Eng. Tariq Al-Mansoori", role: "HR Director, Arabtec Construction", type: "employer" },
+  { quote: "Galaxy Venture guided me step-by-step through my transition from London to Dubai. Their DHA licensing and interview coaching got me a placement at a top clinic within three weeks.", author: "Dr. Sarah Jenkins", role: "Critical Care Nurse, Emirates Health Clinic", type: "candidate" },
+  { quote: "Finding qualified structural engineers with specific Middle East project exposure is always a challenge. Galaxy Venture delivered a shortlist of three stellar candidates in days.", author: "Eng. Tariq Al-Mansoori", role: "HR Director, Arabtec Construction", type: "employer" },
   { quote: "The AI search assistant on their portal matched me with a remote position. The resume parsing tool was highly intuitive, and my interview scheduling was fully automated.", author: "Liam Chen", role: "Cloud Infrastructure Architect", type: "candidate" }
 ];
 
@@ -240,7 +240,7 @@ function processAIQuery(query) {
     return response;
   }
   
-  return `I couldn't find a specific match for that keyword. Galaxy Ventures handles roles in **IT & Technology, Healthcare, Engineering, Finance, Logistics, and Construction**. Try asking:<br>
+  return `I couldn't find a specific match for that keyword. Galaxy Venture handles roles in **IT & Technology, Healthcare, Engineering, Finance, Logistics, and Construction**. Try asking:<br>
           <div class="chat-suggestions">
             <button class="chat-suggest-btn" onclick="triggerSuggest('Show me cloud developer jobs')">"Show me cloud developer jobs"</button>
             <button class="chat-suggest-btn" onclick="triggerSuggest('Jobs in Abu Dhabi')">"Jobs in Abu Dhabi"</button>
@@ -452,7 +452,7 @@ function getHomeTemplate() {
           <span style="font-size:0.65rem; color:#06b6d4;">✦</span> Premium UAE Recruitment & Global Search
         </div>
         <h1 class="hero-title">Connecting Talent with Opportunity <span class="gradient-text"><br>Across the UAE and Beyond</span></h1>
-        <p class="hero-subtitle">Galaxy Ventures helps professionals discover rewarding careers while enabling companies to hire exceptional talent efficiently.</p>
+        <p class="hero-subtitle">Galaxy Venture helps professionals discover rewarding careers while enabling companies to hire exceptional talent efficiently.</p>
         <div class="hero-ctas">
           <button onclick="navigateTo('jobs')" class="btn btn-primary">Find Jobs <svg style="width:16px;height:16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
           <button onclick="navigateTo('employers')" class="btn btn-secondary">Hire Talent <svg style="width:16px;height:16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></button>
@@ -762,7 +762,7 @@ function getHomeTemplate() {
     <section class="section-padding" style="background:#f8fafc; border-top: 1px solid #e2e8f0;">
       <div class="container" style="text-align:center; max-width:800px;">
         <h2 style="font-size:2.25rem; margin-bottom:1rem;">Ready to Expand Your Horizon?</h2>
-        <p style="margin-bottom:2rem; font-size:1.1rem;">Whether you are a senior executive aiming to accelerate your career path or a multinational company looking to staff highly specialized pipelines, Galaxy Ventures is your strategic partner.</p>
+        <p style="margin-bottom:2rem; font-size:1.1rem;">Whether you are a senior executive aiming to accelerate your career path or a multinational company looking to staff highly specialized pipelines, Galaxy Venture is your strategic partner.</p>
         <div class="hero-ctas">
           <button onclick="navigateTo('contact')" class="btn btn-primary">Connect With Us</button>
           <button onclick="toggleAIDrawer()" class="btn btn-secondary">Talk to AI Recruiter</button>
@@ -778,7 +778,7 @@ function getAboutTemplate() {
     <section class="inner-hero">
       <div class="dot-grid"></div>
       <div class="container" style="text-align:center;">
-        <span class="section-tag" style="color:var(--electric-cyan);">ABOUT GALAXY VENTURES</span>
+        <span class="section-tag" style="color:var(--electric-cyan);">ABOUT GALAXY VENTURE</span>
         <h1>We Pioneer Recruiting Innovation</h1>
         <p style="max-width:600px; margin:0 auto; color:rgba(255,255,255,0.8);">Connecting top-tier professionals globally with leading corporations across the United Arab Emirates since 2016.</p>
       </div>
@@ -789,7 +789,7 @@ function getAboutTemplate() {
         <div class="grid-2">
           <div>
             <h2 style="font-size:1.8rem; margin-bottom:1rem; color:var(--midnight-blue);">Our Company Story</h2>
-            <p style="margin-bottom:1rem;">Founded in the Dubai International Financial Centre (DIFC) in 2016, Galaxy Ventures set out to replace archaic, slow recruitment models with an active, technology-driven approach.</p>
+            <p style="margin-bottom:1rem;">Founded in the Dubai International Financial Centre (DIFC) in 2016, Galaxy Venture set out to replace archaic, slow recruitment models with an active, technology-driven approach.</p>
             <p style="margin-bottom:1rem;">We combined advanced candidate parsing software with direct human expertise, setting up specific verticals in IT & Tech, Healthcare, Engineering, and Finance. Today, we stand as one of the UAE\'s most trusted consultancy networks, licensed and approved for executive staffing by the Ministry of Human Resources and Emiratisation (MOHRE).</p>
           </div>
           <div style="background:var(--slate-light); border:1px solid var(--slate-border); padding:2rem; border-radius:16px; display:flex; flex-direction:column; justify-content:center;">
@@ -1002,7 +1002,7 @@ function getEmployersTemplate() {
         <div class="grid-2" style="margin-bottom:4rem;">
           <div>
             <h2 style="font-size:1.8rem; color:var(--midnight-blue); margin-bottom:1rem;">Advanced Recruitment Structuring</h2>
-            <p style="margin-bottom:1rem;">Galaxy Ventures provides full lifecycle corporate search configurations. We take over the sourcing burden, screening, and legal pre-clearance with the Ministry of Human Resources (MOHRE), delivering a highly vetted candidate roster ready to perform.</p>
+            <p style="margin-bottom:1rem;">Galaxy Venture provides full lifecycle corporate search configurations. We take over the sourcing burden, screening, and legal pre-clearance with the Ministry of Human Resources (MOHRE), delivering a highly vetted candidate roster ready to perform.</p>
             <p style="margin-bottom:1.5rem;">Our search mechanisms connect directly with passive technology nodes and medical pools across Europe, North America, and South Asia, providing localized talent matching for UAE enterprises.</p>
             
             <div style="background:var(--slate-light); border-left:4px solid var(--cosmic-purple); padding:1rem; border-radius:0 12px 12px 0;">
@@ -1015,7 +1015,7 @@ function getEmployersTemplate() {
           <!-- Corporate Infographic/Showcase (Form removed from public page) -->
           <div class="contact-form-wrapper" style="display:flex; flex-direction:column; justify-content:center; gap:var(--spacing-sm); background:linear-gradient(135deg, var(--midnight-blue) 0%, #1e1b4b 100%); color:var(--pure-white); padding:var(--spacing-lg); border-radius:var(--radius-lg);">
             <h3 style="font-size:1.4rem; font-weight:700; color:var(--pure-white); margin-bottom:0.3rem;">Corporate Sourcing Strengths</h3>
-            <p style="font-size:0.9rem; color:rgba(255, 255, 255, 0.7); margin-bottom:1rem;">Galaxy Ventures provides executive search and permanent staffing solutions tailored to GCC market demands.</p>
+            <p style="font-size:0.9rem; color:rgba(255, 255, 255, 0.7); margin-bottom:1rem;">Galaxy Venture provides executive search and permanent staffing solutions tailored to GCC market demands.</p>
             
             <div style="display:flex; flex-direction:column; gap:var(--spacing-sm);">
               <div style="display:flex; gap:var(--spacing-sm); align-items:flex-start;">
