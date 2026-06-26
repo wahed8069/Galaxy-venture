@@ -1,15 +1,210 @@
 // --- MOCK DATABASE SYSTEMS ---
 
-let JOBS_DATABASE = [];
+const DEFAULT_JOBS = [
+  {
+    "id": 17,
+    "title": "uiux",
+    "company": "waaaaa",
+    "location": "dubai",
+    "salary": "76767665 AED",
+    "type": "Full-time",
+    "industry": "IT & Technology",
+    "logo": "🏢",
+    "requirements": "tfgyhjnm"
+  },
+  {
+    "id": 1,
+    "title": "Senior Software Engineer (Full Stack)",
+    "company": "TechNova UAE",
+    "location": "Dubai, UAE",
+    "salary": "22,000 - 28,000 AED",
+    "type": "Full-time",
+    "industry": "IT & Technology",
+    "logo": "💻",
+    "requirements": "React, Node.js, AWS, 5+ years experience."
+  },
+  {
+    "id": 2,
+    "title": "Registered Nurse",
+    "company": "Emirates Health Clinic",
+    "location": "Abu Dhabi, UAE",
+    "salary": "14,000 - 18,000 AED",
+    "type": "Full-time",
+    "industry": "Healthcare",
+    "logo": "🩺",
+    "requirements": "HAAD/DHA License, ICU experience."
+  },
+  {
+    "id": 3,
+    "title": "Operations Project Manager",
+    "company": "Al-Futtaim Group",
+    "location": "Dubai, UAE",
+    "salary": "18,000 - 24,000 AED",
+    "type": "Full-time",
+    "industry": "Engineering",
+    "logo": "⚙️",
+    "requirements": "PMP Certified, Construction background."
+  },
+  {
+    "id": 4,
+    "title": "Cloud Infrastructure Architect",
+    "company": "GigaScale Cloud Solutions",
+    "location": "Remote (UAE)",
+    "salary": "30,000 - 35,000 AED",
+    "type": "Remote",
+    "industry": "IT & Technology",
+    "logo": "☁️",
+    "requirements": "AWS/Azure Professional Certification."
+  },
+  {
+    "id": 5,
+    "title": "F&B Manager",
+    "company": "Jumeirah Group Resorts",
+    "location": "Dubai, UAE",
+    "salary": "12,000 - 15,000 AED",
+    "type": "Full-time",
+    "industry": "Hospitality",
+    "logo": "🏨",
+    "requirements": "Luxury resort F&B operations experience."
+  },
+  {
+    "id": 6,
+    "title": "Site Structural Engineer",
+    "company": "Arabtec Construction",
+    "location": "Abu Dhabi, UAE",
+    "salary": "16,000 - 20,000 AED",
+    "type": "Contract",
+    "industry": "Construction",
+    "logo": "🏗️",
+    "requirements": "Civil Engineering degree, UAE Society of Engineers membership."
+  },
+  {
+    "id": 7,
+    "title": "Petroleum Geologist",
+    "company": "ADNOC Group",
+    "location": "Ruwais, UAE",
+    "salary": "25,000 - 32,000 AED",
+    "type": "Full-time",
+    "industry": "Oil & Gas",
+    "logo": "🛢️",
+    "requirements": "Master's in Geology, 3+ years upstream experience."
+  },
+  {
+    "id": 8,
+    "title": "Logistics Operations Lead",
+    "company": "DP World",
+    "location": "Sharjah, UAE",
+    "salary": "13,000 - 16,000 AED",
+    "type": "Full-time",
+    "industry": "Logistics",
+    "logo": "🚢",
+    "requirements": "Supply chain management, Sea freight protocols."
+  },
+  {
+    "id": 9,
+    "title": "Financial Analyst",
+    "company": "Mashreq Bank",
+    "location": "Dubai, UAE",
+    "salary": "15,000 - 19,000 AED",
+    "type": "Full-time",
+    "industry": "Finance",
+    "logo": "📊",
+    "requirements": "CFA Candidate, advanced valuation modeling."
+  },
+  {
+    "id": 10,
+    "title": "Senior Retail Store Manager",
+    "company": "Chalhoub Group",
+    "location": "Dubai, UAE",
+    "salary": "11,000 - 14,000 AED",
+    "type": "Full-time",
+    "industry": "Retail",
+    "logo": "🛍️",
+    "requirements": "Fashion retail store management, Arabic speaker preferred."
+  },
+  {
+    "id": 11,
+    "title": "Senior AI Research Scientist",
+    "company": "UAE AI Council",
+    "location": "Dubai, UAE",
+    "salary": "35,000 - 45,000 AED",
+    "type": "Full-time",
+    "industry": "IT & Technology",
+    "logo": "🧠",
+    "requirements": "PhD in Machine Learning, PyTorch, publications."
+  },
+  {
+    "id": 12,
+    "title": "Lead Architect (Aviation Projects)",
+    "company": "Dubai Airports",
+    "location": "Dubai, UAE",
+    "salary": "28,000 - 34,000 AED",
+    "type": "Full-time",
+    "industry": "Engineering",
+    "logo": "✈️",
+    "requirements": "10+ years airport terminal design, Revit."
+  },
+  {
+    "id": 13,
+    "title": "Chief Financial Officer (CFO)",
+    "company": "Majid Al Futtaim",
+    "location": "Dubai, UAE",
+    "salary": "55,000 - 70,000 AED",
+    "type": "Full-time",
+    "industry": "Finance",
+    "logo": "📈",
+    "requirements": "CPA/CA, ex-CFO or Finance Director at major group."
+  },
+  {
+    "id": 14,
+    "title": "DHA General Practitioner",
+    "company": "King's College Hospital",
+    "location": "Dubai Marina, UAE",
+    "salary": "20,000 - 26,000 AED",
+    "type": "Full-time",
+    "industry": "Healthcare",
+    "logo": "🏥",
+    "requirements": "Active DHA License, Family medicine residency."
+  },
+  {
+    "id": 15,
+    "title": "Marine Operations Manager",
+    "company": "Jebel Ali Port (DP World)",
+    "location": "Dubai, UAE",
+    "salary": "18,000 - 22,000 AED",
+    "type": "Full-time",
+    "industry": "Logistics",
+    "logo": "⚓",
+    "requirements": "Master Mariner certificate, port cargo operations."
+  },
+  {
+    "id": 16,
+    "title": "Regional Sales Manager",
+    "company": "Chalhoub Group",
+    "location": "Abu Dhabi, UAE",
+    "salary": "16,000 - 20,000 AED",
+    "type": "Full-time",
+    "industry": "Retail",
+    "logo": "💼",
+    "requirements": "Luxury retail management, UAE driver license."
+  }
+];
+
+let JOBS_DATABASE = [...DEFAULT_JOBS];
 
 async function fetchJobsFromServer() {
   try {
     const res = await fetch('/api/jobs');
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`);
+    }
     const data = await res.json();
-    JOBS_DATABASE = data;
-    renderActiveView(); // Update page with dynamic job count
+    if (data && Array.isArray(data)) {
+      JOBS_DATABASE = data;
+      renderActiveView(); // Update page with dynamic job count and content
+    }
   } catch (err) {
-    console.error("Failed to load jobs from backend:", err);
+    console.error("Failed to load jobs from backend, using default fallback:", err);
   }
 }
 
@@ -1706,6 +1901,10 @@ function moveCandidateToStage(candId, stage) {
 
 // --- INITIALIZATION ---
 document.addEventListener('DOMContentLoaded', () => {
+  // Render default jobs immediately to avoid blank screen
+  renderActiveView();
+  
+  // Try fetching fresh data from backend
   fetchJobsFromServer();
   
   // Listen header scroll class
