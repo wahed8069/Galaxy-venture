@@ -2117,6 +2117,18 @@ footer p {
   color: var(--cosmic-purple);
 }
 
+.dash-menu-item.dash-menu-logout {
+  margin-top: 1.5rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--slate-border);
+  border-radius: 0;
+}
+
+.dash-menu-item.dash-menu-logout:hover {
+  background-color: #fef2f2;
+  color: #dc2626;
+}
+
 .dashboard-content-box {
   display: flex;
   flex-direction: column;

@@ -1337,6 +1337,13 @@ async function handleAdminLoginSubmit(event) {
   }
 }
 
+function logoutAdmin() {
+  ADMIN_SESSION_TOKEN = null;
+  localStorage.removeItem('admin_token');
+  showNotification("Logged out successfully.");
+  navigateTo('home');
+}
+
 async function handleEmployerJobPosting(event) {
   event.preventDefault();
   if (!ADMIN_SESSION_TOKEN) {
@@ -1771,6 +1778,7 @@ function getEmployerDashboardTemplate() {
             <ul class="dash-menu-list">
               <li class="dash-menu-item ${isPipeline ? 'active' : ''}" onclick="switchAdminTab('pipeline')"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2"></path></svg> Candidate pipeline</li>
               <li class="dash-menu-item ${!isPipeline ? 'active' : ''}" onclick="switchAdminTab('post-job')"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> Post New Job</li>
+              <li class="dash-menu-item dash-menu-logout" onclick="logoutAdmin()"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg> Logout</li>
             </ul>
           </div>
           
