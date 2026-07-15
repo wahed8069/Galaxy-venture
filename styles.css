@@ -2478,7 +2478,7 @@ footer p {
 .highlight-wrapper {
   position: relative;
   display: inline-block;
-  color: var(--pure-white);
+  color: var(--midnight-blue);
   padding: 0 0.4rem;
   z-index: 5;
 }
@@ -2508,21 +2508,20 @@ footer p {
 /* Parallel Style Search Bar */
 .hero-search-form {
   display: flex;
-  background: var(--glass-bg-dark);
-  border: 1px solid var(--glass-border-dark);
-  backdrop-filter: blur(var(--glass-blur));
+  background: transparent;
+  border: 2px solid #84cc16; /* Lime green stroke */
   padding: 0.5rem;
   border-radius: 100px;
   width: 100%;
   max-width: 520px;
   margin-top: 1.5rem;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
   transition: all var(--transition-fast);
 }
 
 .hero-search-form:focus-within {
-  border-color: var(--electric-cyan);
-  box-shadow: 0 0 20px rgba(6, 182, 212, 0.15);
+  border-color: #65a30d;
+  box-shadow: 0 0 20px rgba(132, 204, 22, 0.2);
 }
 
 .hero-search-input-wrap {
@@ -2535,7 +2534,7 @@ footer p {
 .search-icon {
   width: 20px;
   height: 20px;
-  color: var(--slate-text);
+  color: var(--midnight-blue);
   flex-shrink: 0;
   margin-right: 0.5rem;
 }
@@ -2544,7 +2543,7 @@ footer p {
   background: transparent;
   border: none;
   outline: none;
-  color: var(--pure-white);
+  color: var(--midnight-blue);
   width: 100%;
   font-family: var(--font-body);
   font-size: 0.95rem;
@@ -2555,8 +2554,8 @@ footer p {
 }
 
 .hero-search-btn {
-  background: #a3e635; /* Bright Parallel-style Lime */
-  color: var(--charcoal-black);
+  background: #84cc16;
+  color: var(--pure-white);
   border: none;
   outline: none;
   font-family: var(--font-heading);
@@ -2571,7 +2570,7 @@ footer p {
 }
 
 .hero-search-btn:hover {
-  background: #bef264;
+  background: #65a30d;
   transform: scale(1.03);
 }
 
@@ -2592,21 +2591,21 @@ footer p {
 }
 
 .hero-tag-pill {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: rgba(255, 255, 255, 0.7);
+  background: rgba(15, 23, 42, 0.05);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  color: var(--midnight-blue);
   padding: 0.35rem 0.85rem;
   border-radius: 100px;
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   transition: all var(--transition-fast);
 }
 
 .hero-tag-pill:hover {
-  background: rgba(6, 182, 212, 0.1);
-  color: var(--electric-cyan);
-  border-color: rgba(6, 182, 212, 0.3);
+  background: rgba(132, 204, 22, 0.1);
+  color: #65a30d;
+  border-color: rgba(132, 204, 22, 0.3);
   transform: translateY(-1px);
 }
 
