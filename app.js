@@ -741,18 +741,23 @@ function getHomeTemplate() {
           </div>
         </div>
         
-        <!-- Right Column: Hero Image -->
+        <!-- Right Column: Galaxy Animation -->
         <div class="hero-right">
-          <div class="hero-image-container">
-            <img src="hero_talent.png" alt="Premium Talent Recruitment Dubai" class="hero-main-img">
-            <div class="hero-floating-card card-candidates">
+          <div class="galaxy-illustration" style="margin: 0 auto; max-width: 480px; height: 320px; position: relative;">
+            <div class="galaxy-center" style="width: 120px; height: 120px;"></div>
+            <div class="galaxy-orbit orbit-1" style="width: 220px; height: 90px;"><div class="planet planet-cyan"></div></div>
+            <div class="galaxy-orbit orbit-2" style="width: 340px; height: 130px;"><div class="planet planet-purple"></div></div>
+            <div class="galaxy-orbit orbit-3" style="width: 450px; height: 170px;"><div class="planet planet-dark"></div></div>
+            
+            <!-- Floating cards overlaid on the animation for interactivity -->
+            <div class="hero-floating-card card-candidates" style="left: -10px; top: 10%;">
               <div class="floating-avatar">👤</div>
               <div>
                 <div style="font-weight:700; font-size:0.85rem; color:var(--midnight-blue);">DHA Clinical Nurse</div>
                 <div style="font-size:0.7rem; color:var(--slate-text);">Placed in Dubai Healthcare City</div>
               </div>
             </div>
-            <div class="hero-floating-card card-employers">
+            <div class="hero-floating-card card-employers" style="right: -10px; bottom: 10%;">
               <div class="floating-avatar" style="background:var(--cosmic-purple-light); color:var(--cosmic-purple);">🏢</div>
               <div>
                 <div style="font-weight:700; font-size:0.85rem; color:var(--midnight-blue);">Mandate Completed</div>
