@@ -3020,3 +3020,33 @@ footer p {
     transform: translateX(-50%);
   }
 }
+
+/* --- RESPONSIVE ACTION BUTTONS TABS ON MOBILE --- */
+.header-actions .btn-icon {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .header-actions .btn-text {
+    display: none !important;
+  }
+  
+  .header-actions .btn-icon {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .header-actions .btn-find-jobs,
+  .header-actions .btn-hire-talent {
+    padding: 0 !important;
+    width: 38px !important;
+    height: 38px !important;
+    min-width: unset !important;
+    border-radius: 50% !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08) !important;
+  }
+}
