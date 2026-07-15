@@ -261,6 +261,13 @@ function getPageIdFromPath() {
 }
 
 function navigateTo(pageId, pushState = true) {
+  if (pageId === 'employer-dashboard' && !ADMIN_SESSION_TOKEN) {
+    pageId = 'home';
+    setTimeout(() => {
+      openAdminLoginModal();
+    }, 100);
+  }
+  
   AppState.currentPage = pageId;
   renderActiveView();
   updateNavigationUI();
@@ -1229,7 +1236,7 @@ function getEmployersTemplate() {
               <strong style="color:var(--midnight-blue); font-size:0.95rem;">Interactive Feature Check</strong><br>
               <span style="font-size:0.85rem; color:var(--slate-text);">Toggle to our **Employer Dashboard** to view a live demonstration of our proprietary Applicant Tracking System (Kanban) and advance candidate files in real-time.</span>
             </div>
-            <button onclick="navigateToEmployerDashboard()" class="btn btn-primary" style="margin-top:1rem;">Access Employer Portal</button>
+            <button onclick="handleHireTalentClick()" class="btn btn-primary" style="margin-top:1rem;">Access Employer Portal</button>
           </div>
           
           <!-- Corporate Infographic/Showcase (Form removed from public page) -->
