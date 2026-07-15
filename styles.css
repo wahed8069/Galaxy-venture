@@ -2509,7 +2509,7 @@ footer p {
 .hero-search-form {
   display: flex;
   background: transparent;
-  border: 2px solid #84cc16; /* Lime green stroke */
+  border: 2px solid var(--cosmic-purple); /* Cosmic purple stroke */
   padding: 0.5rem;
   border-radius: 100px;
   width: 100%;
@@ -2520,8 +2520,8 @@ footer p {
 }
 
 .hero-search-form:focus-within {
-  border-color: #65a30d;
-  box-shadow: 0 0 20px rgba(132, 204, 22, 0.2);
+  border-color: #5b21b6;
+  box-shadow: 0 0 20px rgba(109, 40, 217, 0.25);
 }
 
 .hero-search-input-wrap {
@@ -2554,7 +2554,7 @@ footer p {
 }
 
 .hero-search-btn {
-  background: #84cc16;
+  background: var(--cosmic-purple);
   color: var(--pure-white);
   border: none;
   outline: none;
@@ -2570,7 +2570,7 @@ footer p {
 }
 
 .hero-search-btn:hover {
-  background: #65a30d;
+  background: #5b21b6;
   transform: scale(1.03);
 }
 
