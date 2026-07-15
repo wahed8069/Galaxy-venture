@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | Galaxy Venture</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background: var(--midnight-deep);
+      color: var(--pure-white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-family: var(--font-body);
+    }
+    header {
+      background: transparent;
+      border-bottom: 1px solid var(--glass-border-dark);
+      padding: 1.5rem 0;
+    }
+    .error-container {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.5rem;
+    }
+    .error-card {
+      background: var(--glass-bg-dark);
+      border: 1px solid var(--glass-border-dark);
+      backdrop-filter: blur(var(--glass-blur));
+      border-radius: var(--radius-xl);
+      padding: 3rem;
+      max-width: 600px;
+      text-align: center;
+      box-shadow: var(--shadow-lg), var(--shadow-glow);
+    }
+    .error-code {
+      font-family: var(--font-heading);
+      font-size: 8rem;
+      font-weight: 800;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--electric-cyan), var(--cosmic-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+      animation: pulse 2s infinite ease-in-out;
+    }
+    .error-title {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--pure-white);
+      margin-bottom: 1rem;
+    }
+    .error-desc {
+      color: var(--slate-text);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+    }
+    .error-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    footer {
+      border-top: 1px solid var(--glass-border-dark);
+      padding: 1.5rem 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--slate-text);
+      background: rgba(15, 23, 42, 0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container" style="display:flex; justify-content:center;">
+      <a href="/" style="display:flex; align-items:center; gap:0.5rem; text-decoration:none;">
+        <svg viewBox="0 0 100 100" fill="none" style="width: 38px; height: 38px; flex-shrink: 0;" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="blueSwirl404" x1="10" y1="10" x2="90" y2="90" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#ffffff" />
+              <stop offset="50%" stop-color="#1d4ed8" />
+              <stop offset="100%" stop-color="#0284c7" />
+            </linearGradient>
+            <linearGradient id="goldFigure404" x1="30" y1="20" x2="70" y2="80" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#fbbf24" />
+              <stop offset="50%" stop-color="#d97706" />
+              <stop offset="100%" stop-color="#b45309" />
+            </linearGradient>
+          </defs>
+          <path d="M 28 32 C 12 48, 12 72, 36 82 C 60 92, 80 78, 84 58 C 88 38, 68 18, 48 14 C 64 24, 78 44, 74 64 C 70 78, 50 82, 36 72 C 22 62, 22 42, 28 32 Z" fill="url(#blueSwirl404)" />
+          <path d="M 22 52 C 20 68, 36 78, 54 76 C 40 74, 26 66, 25 54 C 24.5 52, 23 48, 22 52 Z" fill="url(#goldFigure404)" />
+          <circle cx="52" cy="30" r="5.5" fill="url(#goldFigure404)" />
+          <path d="M 38 68 C 42 66, 45 58, 45 54 C 45 49, 39 44, 35 41 C 43 39, 49 47, 53 49 C 57 51, 60 41, 64 24 C 60 36, 56 38, 51 41 C 47 43, 44 50, 44 55 C 44 60, 36 69, 38 68 Z" fill="url(#goldFigure404)" />
+          <path d="M 68 20 L 70 23 L 72 20 L 70 17 Z" fill="#fbbf24" />
+          <path d="M 38 30 L 40 32 L 42 30 L 40 28 Z" fill="#fbbf24" />
+          <circle cx="58" cy="22" r="1" fill="#fbbf24" />
+          <circle cx="65" cy="33" r="1" fill="#fbbf24" />
+        </svg>
+        <div style="display:flex; flex-direction:column; line-height:1.1; text-align:left;">
+          <span style="font-family:'Outfit', sans-serif; font-weight:700; font-size:1.3rem; color:var(--pure-white); letter-spacing:-0.01em;">GALAXY VENTURE</span>
+          <span style="font-family:'Plus Jakarta Sans', sans-serif; font-weight:600; font-size:0.5rem; color:#fbbf24; letter-spacing:0.02em; text-transform:uppercase;">Human Resources Consultancies LLC</span>
+        </div>
+      </a>
+    </div>
+  </header>
+
+  <!-- ERROR CONTAINER -->
+  <div class="error-container">
+    <div class="error-card">
+      <div class="error-code">404</div>
+      <h1 class="error-title">Page Not Found</h1>
+      <p class="error-desc">
+        The resource you are looking for has been relocated, removed, or is temporarily offline. Let us help you navigate back to safety.
+      </p>
+      <div class="error-actions">
+        <a href="/" class="btn btn-primary" style="display:inline-flex; align-items:center; gap:0.5rem; text-decoration:none;">
+          <svg style="width:18px;height:18px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+          Return Home
+        </a>
+        <a href="/jobs" class="btn btn-secondary" style="display:inline-flex; align-items:center; gap:0.5rem; text-decoration:none;">
+          <svg style="width:18px;height:18px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          Search Jobs
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Galaxy Venture (Human Resources Consultancies LLC). All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
