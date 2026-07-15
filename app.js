@@ -995,29 +995,45 @@ function getHomeTemplate() {
     </section>
 
     <!-- Success Stories (Testimonials) -->
-    <section class="stories-section section-padding" style="background:#f8fafc; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0;">
+    <section class="stories-section section-padding" style="background:#f8fafc; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; overflow:hidden; padding-left:0; padding-right:0;">
       <div class="dot-grid"></div>
-      <div class="container">
-        <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+      <div style="width: 100%; padding: 0;">
+        <div class="section-header" style="text-align: center; margin-bottom: 2rem; padding: 0 1.5rem;">
           <span class="section-tag" style="color:var(--cosmic-purple); margin-bottom: 0.5rem; display: inline-block;">SUCCESS STORIES</span>
           <h2 class="section-title" style="margin-top: 0; color: #1e1b4b;">Trusted by <span style="background: linear-gradient(135deg, #1d4ed8 0%, #a855f7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Leading Teams & Candidates</span></h2>
         </div>
         
-        <div class="testimonials-static-grid">
-          ${TESTIMONIALS_DATABASE.map(t => `
-            <div class="testimonial-grid-card">
-              <div class="testimonial-avatar-wrapper">
-                <img src="${t.avatar}" alt="${t.author}" class="testimonial-avatar-img">
+        <div class="testimonials-marquee-container">
+          <div class="testimonials-marquee-track">
+            ${TESTIMONIALS_DATABASE.map(t => `
+              <div class="testimonial-grid-card">
+                <div class="testimonial-avatar-wrapper">
+                  <img src="${t.avatar}" alt="${t.author}" class="testimonial-avatar-img">
+                </div>
+                <h4 class="testimonial-author-name">${t.author}</h4>
+                <div class="testimonial-author-role">${t.role}</div>
+                <div class="testimonial-author-company">${t.company}</div>
+                <p class="testimonial-card-quote">"${t.quote}"</p>
+                <div class="testimonial-rating-stars">
+                  ${'★'.repeat(t.rating)}
+                </div>
               </div>
-              <h4 class="testimonial-author-name">${t.author}</h4>
-              <div class="testimonial-author-role">${t.role}</div>
-              <div class="testimonial-author-company">${t.company}</div>
-              <p class="testimonial-card-quote">"${t.quote}"</p>
-              <div class="testimonial-rating-stars">
-                ${'★'.repeat(t.rating)}
+            `).join('')}
+            ${TESTIMONIALS_DATABASE.map(t => `
+              <div class="testimonial-grid-card">
+                <div class="testimonial-avatar-wrapper">
+                  <img src="${t.avatar}" alt="${t.author}" class="testimonial-avatar-img">
+                </div>
+                <h4 class="testimonial-author-name">${t.author}</h4>
+                <div class="testimonial-author-role">${t.role}</div>
+                <div class="testimonial-author-company">${t.company}</div>
+                <p class="testimonial-card-quote">"${t.quote}"</p>
+                <div class="testimonial-rating-stars">
+                  ${'★'.repeat(t.rating)}
+                </div>
               </div>
-            </div>
-          `).join('')}
+            `).join('')}
+          </div>
         </div>
       </div>
     </section>

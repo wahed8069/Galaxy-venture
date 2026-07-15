@@ -2964,3 +2964,59 @@ footer p {
   padding-top: 2.5rem !important;
   padding-bottom: 2.5rem !important;
 }
+
+/* --- TESTIMONIALS ENDLESS MARQUEE SCROLLING Track --- */
+.testimonials-marquee-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.testimonials-marquee-container::before,
+.testimonials-marquee-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.testimonials-marquee-container::before {
+  left: 0;
+  background: linear-gradient(to right, #f8fafc 10%, transparent 100%);
+}
+
+.testimonials-marquee-container::after {
+  right: 0;
+  background: linear-gradient(to left, #f8fafc 10%, transparent 100%);
+}
+
+.testimonials-marquee-track {
+  display: flex;
+  gap: 2.5rem;
+  width: max-content;
+  animation: marqueeTestimonials 55s linear infinite;
+}
+
+.testimonials-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.testimonials-marquee-track .testimonial-grid-card {
+  width: 320px !important;
+  flex-shrink: 0 !important;
+  margin-top: 40px !important;
+  margin-bottom: 20px !important;
+}
+
+@keyframes marqueeTestimonials {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
