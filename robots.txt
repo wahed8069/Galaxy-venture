@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://galaxyventurehrc.com/sitemap.xml
