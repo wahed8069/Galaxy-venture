@@ -239,6 +239,62 @@ const TESTIMONIALS_DATABASE = [
     company: "Independent Consultant", 
     avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&h=150&q=80",
     rating: 5 
+  },
+  { 
+    quote: "Securing senior pediatric specialists for our hospital group was smooth. Their medical licensing navigation is unmatched.", 
+    author: "Dr. Priya Sharma", 
+    role: "Medical Director", 
+    company: "Aster Clinics Dubai", 
+    avatar: "https://images.unsplash.com/photo-1594824813573-246434de83fb?auto=format&fit=crop&w=150&h=150&q=80",
+    rating: 5 
+  },
+  { 
+    quote: "Their C-suite search methodology is highly confidential and precise. They matched us with a stellar Chief Financial Officer.", 
+    author: "Marcus Vance", 
+    role: "VP of HR", 
+    company: "Al-Futtaim Group", 
+    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&h=150&q=80",
+    rating: 5 
+  },
+  { 
+    quote: "We needed specialized operations directors for Jebel Ali Port expansion. Galaxy Venture sourced talent globally within a month.", 
+    author: "Aaliyah Al-Maktoum", 
+    role: "Director of Operations", 
+    company: "DP World", 
+    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&h=150&q=80",
+    rating: 5 
+  },
+  { 
+    quote: "As a tech lead relocating from Stockholm to Dubai, their onboarding concierge support was amazing. They handled everything.", 
+    author: "David Lindqvist", 
+    role: "Senior Engineering Manager", 
+    company: "TechNova Dubai", 
+    avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&h=150&q=80",
+    rating: 5 
+  },
+  { 
+    quote: "Their payroll outsourcing and local compliance setup saved us months of admin effort. Exceptional support for new corporate branches.", 
+    author: "Fatima Rashid", 
+    role: "Regional HR Lead", 
+    company: "Chalhoub Group", 
+    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=150&h=150&q=80",
+    rating: 5 
+  },
+  { 
+    quote: "Galaxy Venture understands the unique engineering standards of Dubai. They delivered excellent project designers.", 
+    author: "Michael Chang", 
+    role: "Chief Engineer", 
+    company: "Dubai Airports", 
+    avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&h=150&q=80",
+    rating: 5 
+  },
+  { 
+    quote: "The digital recruitment portal is intuitive, and the candidate mapping is highly accurate. It streamlined our scale-up process.", 
+    author: "Chloe Laurent", 
+    role: "Marketing Director", 
+    company: "Jumeirah Resorts", 
+    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150&q=80",
+    rating: 5 
   }
 ];
 
@@ -776,7 +832,7 @@ function getHomeTemplate() {
             <div class="hero-floating-card card-stories" style="left: 10%; bottom: -15px; animation: floatCard 4.5s ease-in-out infinite alternate;">
               <div class="floating-avatar" style="background:#fef3c7; color:#d97706;">★</div>
               <div>
-                <div style="font-weight:700; font-size:0.85rem; color:var(--midnight-blue);">10+ Success Stories</div>
+                <div style="font-weight:700; font-size:0.85rem; color:var(--midnight-blue);">100+ Success Stories</div>
                 <div style="font-size:0.7rem; color:var(--slate-text);">Vetted placements in Dubai</div>
               </div>
             </div>
@@ -890,7 +946,7 @@ function getHomeTemplate() {
             <div class="stat-label">Client Satisfaction</div>
           </div>
           <div class="stat-item animate-stat-pulse">
-            <div class="stat-number">10+</div>
+            <div class="stat-number">100+</div>
             <div class="stat-label">Success Stories</div>
           </div>
         </div>
@@ -1171,43 +1227,7 @@ function getAboutTemplate() {
           </div>
         </div>
         
-        <h2 style="font-size:1.8rem; margin-top:4rem; text-align:center; color:var(--midnight-blue);">Our Leadership Team</h2>
-        <p style="text-align:center; max-width:600px; margin:0.5rem auto 2rem; color:var(--slate-text);">The seasoned industry professionals guiding our global operations.</p>
-        
-        <div class="team-grid">
-          <div class="team-card">
-            <div class="team-avatar-box">👤</div>
-            <div class="team-info">
-              <div class="team-name">Fares Al-Maktoum</div>
-              <div class="team-role">Managing Director & Founder</div>
-              <p style="font-size:0.85rem;">Ex-DIFC Investment Advisor, 15+ years in Middle East corporate relations.</p>
-            </div>
-          </div>
-          <div class="team-card">
-            <div class="team-avatar-box">👤</div>
-            <div class="team-info">
-              <div class="team-name">Dr. Helen Carter</div>
-              <div class="team-role">Head of Healthcare Placements</div>
-              <p style="font-size:0.85rem;">Clinical operations specialist. Manages DHA/MOH regulatory client pipelines.</p>
-            </div>
-          </div>
-          <div class="team-card">
-            <div class="team-avatar-box">👤</div>
-            <div class="team-info">
-              <div class="team-name">Vikram Sinha</div>
-              <div class="team-role">Director of Tech Sourcing</div>
-              <p style="font-size:0.85rem;">Specializes in Cloud Architect and Senior Software Dev executive search.</p>
-            </div>
-          </div>
-          <div class="team-card">
-            <div class="team-avatar-box">👤</div>
-            <div class="team-info">
-              <div class="team-name">Amna Al-Jaber</div>
-              <div class="team-role">Lead Onboarding & Visa Lead</div>
-              <p style="font-size:0.85rem;">Liaises directly with MOHRE for candidate permits and Golden Visa consulting.</p>
-            </div>
-          </div>
-        </div>
+
       </div>
     </section>
   `;
