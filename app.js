@@ -5,7 +5,7 @@ const DEFAULT_JOBS = [
     "id": 17,
     "title": "uiux",
     "company": "waaaaa",
-    "location": "dubai",
+    "location": "Dubai",
     "salary": "76767665 AED",
     "type": "Full-time",
     "industry": "IT & Technology",
@@ -15,8 +15,8 @@ const DEFAULT_JOBS = [
   {
     "id": 1,
     "title": "Senior Software Engineer (Full Stack)",
-    "company": "TechNova UAE",
-    "location": "Dubai, UAE",
+    "company": "TechNova Dubai",
+    "location": "Dubai",
     "salary": "22,000 - 28,000 AED",
     "type": "Full-time",
     "industry": "IT & Technology",
@@ -27,18 +27,18 @@ const DEFAULT_JOBS = [
     "id": 2,
     "title": "Registered Nurse",
     "company": "Emirates Health Clinic",
-    "location": "Abu Dhabi, UAE",
+    "location": "Dubai",
     "salary": "14,000 - 18,000 AED",
     "type": "Full-time",
     "industry": "Healthcare",
     "logo": "🩺",
-    "requirements": "HAAD/DHA License, ICU experience."
+    "requirements": "DHA License, ICU experience."
   },
   {
     "id": 3,
     "title": "Operations Project Manager",
     "company": "Al-Futtaim Group",
-    "location": "Dubai, UAE",
+    "location": "Dubai",
     "salary": "18,000 - 24,000 AED",
     "type": "Full-time",
     "industry": "Engineering",
@@ -49,7 +49,7 @@ const DEFAULT_JOBS = [
     "id": 4,
     "title": "Cloud Infrastructure Architect",
     "company": "GigaScale Cloud Solutions",
-    "location": "Remote (UAE)",
+    "location": "Remote (Dubai)",
     "salary": "30,000 - 35,000 AED",
     "type": "Remote",
     "industry": "IT & Technology",
@@ -60,7 +60,7 @@ const DEFAULT_JOBS = [
     "id": 5,
     "title": "F&B Manager",
     "company": "Jumeirah Group Resorts",
-    "location": "Dubai, UAE",
+    "location": "Dubai",
     "salary": "12,000 - 15,000 AED",
     "type": "Full-time",
     "industry": "Hospitality",
@@ -71,18 +71,18 @@ const DEFAULT_JOBS = [
     "id": 6,
     "title": "Site Structural Engineer",
     "company": "Arabtec Construction",
-    "location": "Abu Dhabi, UAE",
+    "location": "Dubai",
     "salary": "16,000 - 20,000 AED",
     "type": "Contract",
     "industry": "Construction",
     "logo": "🏗️",
-    "requirements": "Civil Engineering degree, UAE Society of Engineers membership."
+    "requirements": "Civil Engineering degree, Dubai Society of Engineers membership."
   },
   {
     "id": 7,
     "title": "Petroleum Geologist",
     "company": "ADNOC Group",
-    "location": "Ruwais, UAE",
+    "location": "Dubai",
     "salary": "25,000 - 32,000 AED",
     "type": "Full-time",
     "industry": "Oil & Gas",
@@ -93,7 +93,7 @@ const DEFAULT_JOBS = [
     "id": 8,
     "title": "Logistics Operations Lead",
     "company": "DP World",
-    "location": "Sharjah, UAE",
+    "location": "Dubai",
     "salary": "13,000 - 16,000 AED",
     "type": "Full-time",
     "industry": "Logistics",
@@ -104,7 +104,7 @@ const DEFAULT_JOBS = [
     "id": 9,
     "title": "Financial Analyst",
     "company": "Mashreq Bank",
-    "location": "Dubai, UAE",
+    "location": "Dubai",
     "salary": "15,000 - 19,000 AED",
     "type": "Full-time",
     "industry": "Finance",
@@ -115,7 +115,7 @@ const DEFAULT_JOBS = [
     "id": 10,
     "title": "Senior Retail Store Manager",
     "company": "Chalhoub Group",
-    "location": "Dubai, UAE",
+    "location": "Dubai",
     "salary": "11,000 - 14,000 AED",
     "type": "Full-time",
     "industry": "Retail",
@@ -125,8 +125,8 @@ const DEFAULT_JOBS = [
   {
     "id": 11,
     "title": "Senior AI Research Scientist",
-    "company": "UAE AI Council",
-    "location": "Dubai, UAE",
+    "company": "Dubai AI Council",
+    "location": "Dubai",
     "salary": "35,000 - 45,000 AED",
     "type": "Full-time",
     "industry": "IT & Technology",
@@ -137,7 +137,7 @@ const DEFAULT_JOBS = [
     "id": 12,
     "title": "Lead Architect (Aviation Projects)",
     "company": "Dubai Airports",
-    "location": "Dubai, UAE",
+    "location": "Dubai",
     "salary": "28,000 - 34,000 AED",
     "type": "Full-time",
     "industry": "Engineering",
@@ -148,7 +148,7 @@ const DEFAULT_JOBS = [
     "id": 13,
     "title": "Chief Financial Officer (CFO)",
     "company": "Majid Al Futtaim",
-    "location": "Dubai, UAE",
+    "location": "Dubai",
     "salary": "55,000 - 70,000 AED",
     "type": "Full-time",
     "industry": "Finance",
@@ -159,7 +159,7 @@ const DEFAULT_JOBS = [
     "id": 14,
     "title": "DHA General Practitioner",
     "company": "King's College Hospital",
-    "location": "Dubai Marina, UAE",
+    "location": "Dubai Marina, Dubai",
     "salary": "20,000 - 26,000 AED",
     "type": "Full-time",
     "industry": "Healthcare",
@@ -170,7 +170,7 @@ const DEFAULT_JOBS = [
     "id": 15,
     "title": "Marine Operations Manager",
     "company": "Jebel Ali Port (DP World)",
-    "location": "Dubai, UAE",
+    "location": "Dubai",
     "salary": "18,000 - 22,000 AED",
     "type": "Full-time",
     "industry": "Logistics",
@@ -181,12 +181,12 @@ const DEFAULT_JOBS = [
     "id": 16,
     "title": "Regional Sales Manager",
     "company": "Chalhoub Group",
-    "location": "Abu Dhabi, UAE",
+    "location": "Dubai",
     "salary": "16,000 - 20,000 AED",
     "type": "Full-time",
     "industry": "Retail",
     "logo": "💼",
-    "requirements": "Luxury retail management, UAE driver license."
+    "requirements": "Luxury retail management, Dubai driver license."
   }
 ];
 
@@ -209,10 +209,10 @@ async function fetchJobsFromServer() {
 }
 
 const BLOGS_DATABASE = [
-  { id: 1, title: 'Navigating the Golden Visa: UAE Job Market Insights', category: 'Market', date: 'June 18, 2026', readTime: '5 min read', excerpt: 'Understand how the updated Golden Visa rules in the UAE impact professional recruitment and open new residency pathways.', author: 'Fatima Al-Suwaidi', icon: '🔑' },
-  { id: 2, title: 'How to Optimize Your CV for Applicant Tracking Systems', category: 'Tips', date: 'May 29, 2026', readTime: '4 min read', excerpt: 'UAE companies rely heavily on AI scanning tools. Learn how to format and inject key parameters to pass structural candidate filters.', author: 'John Davis', icon: '📝' },
-  { id: 3, title: 'Top Hiring Trends in Middle East Tech Hubs for 2027', category: 'Trends', date: 'April 14, 2026', readTime: '7 min read', excerpt: 'Deep dive into emerging AI, Cybersecurity, and cloud migration initiatives that are fueling executive recruiting across UAE.', author: 'Rohan Sharma', icon: '🚀' },
-  { id: 4, title: 'Interview Preparation: Cultivating the UAE Business Mindset', category: 'Tips', date: 'March 22, 2026', readTime: '5 min read', excerpt: 'A guide on cultural etiquette, salary negotiation, and presenting international credentials to local recruitment panels.', author: 'Amna Al-Hashemi', icon: '🤝' }
+  { id: 1, title: 'Navigating the Golden Visa: Dubai Job Market Insights', category: 'Market', date: 'June 18, 2026', readTime: '5 min read', excerpt: 'Understand how the updated Golden Visa rules in Dubai impact professional recruitment and open new residency pathways.', author: 'Fatima Al-Suwaidi', icon: '🔑' },
+  { id: 2, title: 'How to Optimize Your CV for Applicant Tracking Systems', category: 'Tips', date: 'May 29, 2026', readTime: '4 min read', excerpt: 'Dubai companies rely heavily on AI scanning tools. Learn how to format and inject key parameters to pass structural candidate filters.', author: 'John Davis', icon: '📝' },
+  { id: 3, title: 'Top Hiring Trends in Middle East Tech Hubs for 2027', category: 'Trends', date: 'April 14, 2026', readTime: '7 min read', excerpt: 'Deep dive into emerging AI, Cybersecurity, and cloud migration initiatives that are fueling executive recruiting across Dubai.', author: 'Rohan Sharma', icon: '🚀' },
+  { id: 4, title: 'Interview Preparation: Cultivating the Dubai Business Mindset', category: 'Tips', date: 'March 22, 2026', readTime: '5 min read', excerpt: 'A guide on cultural etiquette, salary negotiation, and presenting international credentials to local recruitment panels.', author: 'Amna Al-Hashemi', icon: '🤝' }
 ];
 
 const TESTIMONIALS_DATABASE = [
@@ -233,7 +233,7 @@ const TESTIMONIALS_DATABASE = [
     rating: 5 
   },
   { 
-    quote: "The team at Galaxy Venture matched me with a remote position. The resume guidance was highly intuitive, and my interview scheduling with UAE employers was fully handled.", 
+    quote: "The team at Galaxy Venture matched me with a remote position. The resume guidance was highly intuitive, and my interview scheduling with Dubai employers was fully handled.", 
     author: "Liam Chen", 
     role: "Cloud Infrastructure Architect", 
     company: "Independent Consultant", 
@@ -364,7 +364,7 @@ function handleResumeFileSelect(file) {
       clearInterval(uploadTimer);
       
       // Step 2: Scanning
-      statusLabel.textContent = "Scanning for UAE compliance standard...";
+      statusLabel.textContent = "Scanning for Dubai compliance standard...";
       setTimeout(() => {
         // Step 3: Parsing
         statusLabel.textContent = "Extracting skills and credentials...";
@@ -467,7 +467,7 @@ function processAIQuery(query) {
   }
   
   if (matchedJobs.length > 0) {
-    let response = `I found ${matchedJobs.length} match(es) in the UAE directory that fit your interest:<br><div class="chat-suggestions" style="margin-top:8px;">`;
+    let response = `I found ${matchedJobs.length} match(es) in the Dubai directory that fit your interest:<br><div class="chat-suggestions" style="margin-top:8px;">`;
     matchedJobs.forEach(job => {
       response += `
         <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:8px; display:flex; flex-direction:column; gap:4px;">
@@ -713,7 +713,7 @@ function getHomeTemplate() {
         <!-- Left Column: Content & Search -->
         <div class="hero-left">
           <div class="badge-tag">
-            <span style="font-size:0.65rem; color:#06b6d4;">✦</span> Premium UAE Recruitment & Global Search
+            <span style="font-size:0.65rem; color:#06b6d4;">✦</span> Premium Dubai Recruitment & Global Search
           </div>
           <h1 class="hero-title">
             Connecting Talent with 
@@ -723,7 +723,7 @@ function getHomeTemplate() {
                 <path d="M 6 25 C 20 6, 130 6, 144 25 C 130 44, 20 44, 6 25" stroke="#fbbf24" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </span>
-            <span class="gradient-text"><br>Across the UAE and Beyond</span>
+            <span class="gradient-text"><br>Across Dubai and Beyond</span>
           </h1>
           <p class="hero-subtitle" style="text-align: left; margin-left: 0; margin-right: 0;">
             Galaxy Venture helps premium professionals discover rewarding careers while enabling companies to hire exceptional talent efficiently.
@@ -783,8 +783,8 @@ function getHomeTemplate() {
       <div class="container grid-2">
         <div class="about-features">
           <span class="section-tag">WHO WE ARE</span>
-          <h2 class="section-title">Exclusive Recruitment Specialists Based in the United Arab Emirates</h2>
-          <p>We are a bespoke, premium talent consultancy offering tailored talent sourcing, local UAE compliance clearance, and global headhunting capabilities. We represent the bridge between industry-leading companies and highly accomplished professionals globally.</p>
+          <h2 class="section-title">Exclusive Recruitment Specialists Based in Dubai</h2>
+          <p>We are a bespoke, premium talent consultancy offering tailored talent sourcing, local Dubai compliance clearance, and global headhunting capabilities. We represent the bridge between industry-leading companies and highly accomplished professionals globally.</p>
           <div style="margin-top:1rem;">
             <button onclick="navigateTo('about')" class="btn btn-secondary">Learn Our Story</button>
           </div>
@@ -805,7 +805,7 @@ function getHomeTemplate() {
             </div>
             <div>
               <h4 class="about-feat-title">Local Market Compliance</h4>
-              <p class="about-feat-desc">In-depth guidance on UAE labor laws, licensing, DHA/HAAD clinical standards, and visa sponsorship.</p>
+              <p class="about-feat-desc">In-depth guidance on Dubai labor laws, licensing, DHA clinical standards, and visa sponsorship.</p>
             </div>
           </div>
           <div class="about-feat-item">
@@ -827,7 +827,7 @@ function getHomeTemplate() {
         <div class="section-header" style="text-align: center; margin-bottom: 4rem;">
           <span class="section-tag" style="color:var(--cosmic-purple); margin-bottom: 0.5rem; display: inline-block;">SERVICES VERTICALS</span>
           <h2 class="section-title" style="margin-top: 0;">Comprehensive Staffing & Consultancy Solutions</h2>
-          <p class="section-subtitle">Connecting exceptional talent with premium UAE businesses through customized matching strategies.</p>
+          <p class="section-subtitle">Connecting exceptional talent with premium Dubai businesses through customized matching strategies.</p>
         </div>
         
         <div class="services-matrix-grid">
@@ -839,7 +839,7 @@ function getHomeTemplate() {
           <div class="service-matrix-card" onclick="navigateTo('services')">
             <div class="service-matrix-icon">💻</div>
             <h3 class="service-matrix-title">IT Recruitment</h3>
-            <p class="service-matrix-desc">Sourcing elite software engineers, DevOps specialists, cloud architects, and IT leadership for UAE tech nodes.</p>
+            <p class="service-matrix-desc">Sourcing elite software engineers, DevOps specialists, cloud architects, and IT leadership for Dubai tech nodes.</p>
           </div>
           <div class="service-matrix-card" onclick="navigateTo('services')">
             <div class="service-matrix-icon">🏢</div>
@@ -854,12 +854,12 @@ function getHomeTemplate() {
           <div class="service-matrix-card" onclick="navigateTo('services')">
             <div class="service-matrix-icon">💰</div>
             <h3 class="service-matrix-title">Payroll Services</h3>
-            <p class="service-matrix-desc">Compliant payroll outsourcing, visa processing, onboarding, and medical insurance registration in the UAE.</p>
+            <p class="service-matrix-desc">Compliant payroll outsourcing, visa processing, onboarding, and medical insurance registration in Dubai.</p>
           </div>
           <div class="service-matrix-card" onclick="navigateTo('services')">
             <div class="service-matrix-icon">📈</div>
             <h3 class="service-matrix-title">HR Consulting</h3>
-            <p class="service-matrix-desc">Specialized advisory on UAE labor laws, Emiratisation localization quotas, company restructuring, and policy drafting.</p>
+            <p class="service-matrix-desc">Specialized advisory on Dubai labor laws, Emiratisation localization quotas, company restructuring, and policy drafting.</p>
           </div>
         </div>
       </div>
@@ -884,7 +884,7 @@ function getHomeTemplate() {
           </div>
           <div class="stat-item">
             <div class="stat-number">10+ Yrs</div>
-            <div class="stat-label">UAE Market Experience</div>
+            <div class="stat-label">Dubai Market Experience</div>
           </div>
         </div>
         
@@ -919,7 +919,7 @@ function getHomeTemplate() {
       <div class="container">
         <div class="section-header">
           <span class="section-tag">OPPORTUNITIES</span>
-          <h2 class="section-title">Latest UAE Roles We Are Filling</h2>
+          <h2 class="section-title">Latest Dubai Roles We Are Filling</h2>
           <p class="section-subtitle">Apply directly or check our jobs directory for advanced search filters.</p>
         </div>
         <div class="job-cards-grid" style="margin-bottom:var(--spacing-lg);">
@@ -935,9 +935,9 @@ function getHomeTemplate() {
     <section class="stories-section section-padding" style="background:#f8fafc; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0;">
       <div class="dot-grid"></div>
       <div class="container">
-        <div class="section-header" style="text-align: center; margin-bottom: 4rem;">
+        <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
           <span class="section-tag" style="color:var(--cosmic-purple); margin-bottom: 0.5rem; display: inline-block;">SUCCESS STORIES</span>
-          <h2 class="section-title" style="margin-top: 0;">Trusted by Leading Teams & Candidates</h2>
+          <h2 class="section-title" style="margin-top: 0; color: #1e1b4b;">Trusted by <span style="background: linear-gradient(135deg, #1d4ed8 0%, #a855f7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Leading Teams & Candidates</span></h2>
         </div>
         
         <div class="testimonials-static-grid">
@@ -1075,7 +1075,7 @@ function getServicesTemplate() {
       <div class="container" style="text-align:center;">
         <span class="section-tag" style="color:var(--electric-cyan);">OUR SERVICES</span>
         <h1>Tailored Recruitment Solutions</h1>
-        <p style="max-width:600px; margin:0 auto; color:rgba(255,255,255,0.8);">Connecting top-tier professionals globally with leading corporations across the UAE and Gulf region.</p>
+        <p style="max-width:600px; margin:0 auto; color:rgba(255,255,255,0.8);">Connecting top-tier professionals globally with leading corporations across Dubai and the Gulf region.</p>
       </div>
     </section>
 
@@ -1095,7 +1095,7 @@ function getServicesTemplate() {
           <div class="service-matrix-card" onclick="navigateTo('contact')">
             <div class="service-matrix-icon">💻</div>
             <h3 class="service-matrix-title">IT Recruitment</h3>
-            <p class="service-matrix-desc">Sourcing elite software engineers, DevOps specialists, cloud architects, and IT leadership for UAE tech nodes.</p>
+            <p class="service-matrix-desc">Sourcing elite software engineers, DevOps specialists, cloud architects, and IT leadership for Dubai tech nodes.</p>
           </div>
           <div class="service-matrix-card" onclick="navigateTo('contact')">
             <div class="service-matrix-icon">🏢</div>
@@ -1110,12 +1110,12 @@ function getServicesTemplate() {
           <div class="service-matrix-card" onclick="navigateTo('contact')">
             <div class="service-matrix-icon">💰</div>
             <h3 class="service-matrix-title">Payroll Services</h3>
-            <p class="service-matrix-desc">Compliant payroll outsourcing, visa processing, onboarding, and medical insurance registration in the UAE.</p>
+            <p class="service-matrix-desc">Compliant payroll outsourcing, visa processing, onboarding, and medical insurance registration in Dubai.</p>
           </div>
           <div class="service-matrix-card" onclick="navigateTo('contact')">
             <div class="service-matrix-icon">📈</div>
             <h3 class="service-matrix-title">HR Consulting</h3>
-            <p class="service-matrix-desc">Specialized advisory on UAE labor laws, Emiratisation localization quotas, company restructuring, and policy drafting.</p>
+            <p class="service-matrix-desc">Specialized advisory on Dubai labor laws, Emiratisation localization quotas, company restructuring, and policy drafting.</p>
           </div>
         </div>
       </div>
@@ -1140,7 +1140,7 @@ function getAboutTemplate() {
       <div class="container" style="text-align:center;">
         <span class="section-tag" style="color:var(--electric-cyan);">ABOUT GALAXY VENTURE</span>
         <h1>We Pioneer Recruiting Innovation</h1>
-        <p style="max-width:600px; margin:0 auto; color:rgba(255,255,255,0.8);">Connecting top-tier professionals globally with leading corporations across the United Arab Emirates since 2016.</p>
+        <p style="max-width:600px; margin:0 auto; color:rgba(255,255,255,0.8);">Connecting top-tier professionals globally with leading corporations across Dubai since 2016.</p>
       </div>
     </section>
 
@@ -1150,7 +1150,7 @@ function getAboutTemplate() {
           <div>
             <h2 style="font-size:1.8rem; margin-bottom:1rem; color:var(--midnight-blue);">Our Company Story</h2>
             <p style="margin-bottom:1rem;">Founded in the Dubai International Financial Centre (DIFC) in 2016, Galaxy Venture set out to replace archaic, slow recruitment models with an active, technology-driven approach.</p>
-            <p style="margin-bottom:1rem;">We combined advanced candidate parsing software with direct human expertise, setting up specific verticals in IT & Tech, Healthcare, Engineering, and Finance. Today, we stand as one of the UAE\'s most trusted consultancy networks, licensed and approved for executive staffing by the Ministry of Human Resources and Emiratisation (MOHRE).</p>
+            <p style="margin-bottom:1rem;">We combined advanced candidate parsing software with direct human expertise, setting up specific verticals in IT & Tech, Healthcare, Engineering, and Finance. Today, we stand as one of Dubai's most trusted consultancy networks, licensed and approved for executive staffing by the Ministry of Human Resources (MOHRE).</p>
           </div>
           <div style="background:var(--slate-light); border:1px solid var(--slate-border); padding:2rem; border-radius:16px; display:flex; flex-direction:column; justify-content:center;">
             <div style="margin-bottom:1.5rem;">
@@ -1212,7 +1212,7 @@ function getJobsTemplate() {
     <section class="inner-hero">
       <div class="dot-grid"></div>
       <div class="container" style="text-align:center;">
-        <span class="section-tag" style="color:var(--electric-cyan);">OPPORTUNITIES IN THE UAE</span>
+        <span class="section-tag" style="color:var(--electric-cyan);">OPPORTUNITIES IN DUBAI</span>
         <h1>Find Your Next Corporate Role</h1>
         <p style="max-width:600px; margin:0 auto; color:rgba(255,255,255,0.8);">Filter through our vetted, high-paying vacancies in Tech, Healthcare, Finance, and Engineering.</p>
       </div>
@@ -1230,8 +1230,6 @@ function getJobsTemplate() {
           <select id="filter-location" onchange="filterJobs()" class="filter-select">
             <option value="">All Locations</option>
             <option value="Dubai">Dubai</option>
-            <option value="Abu Dhabi">Abu Dhabi</option>
-            <option value="Sharjah">Sharjah</option>
             <option value="Remote">Remote</option>
           </select>
 
@@ -1352,7 +1350,7 @@ function getEmployersTemplate() {
       <div class="dot-grid"></div>
       <div class="container" style="text-align:center;">
         <span class="section-tag" style="color:var(--electric-cyan);">CORPORATE SOLUTIONS</span>
-        <h1>Hire exceptional talent in UAE</h1>
+        <h1>Hire exceptional talent in Dubai</h1>
         <p style="max-width:600px; margin:0 auto; color:rgba(255,255,255,0.8);">Accelerating growth by delivering fully compliant senior professionals and technical specialists.</p>
       </div>
     </section>
@@ -1363,7 +1361,7 @@ function getEmployersTemplate() {
           <div>
             <h2 style="font-size:1.8rem; color:var(--midnight-blue); margin-bottom:1rem;">Advanced Recruitment Structuring</h2>
             <p style="margin-bottom:1rem;">Galaxy Venture provides full lifecycle corporate search configurations. We take over the sourcing burden, screening, and legal pre-clearance with the Ministry of Human Resources (MOHRE), delivering a highly vetted candidate roster ready to perform.</p>
-            <p style="margin-bottom:1.5rem;">Our search mechanisms connect directly with passive technology nodes and medical pools across Europe, North America, and South Asia, providing localized talent matching for UAE enterprises.</p>
+            <p style="margin-bottom:1.5rem;">Our search mechanisms connect directly with passive technology nodes and medical pools across Europe, North America, and South Asia, providing localized talent matching for Dubai enterprises.</p>
             
             <div style="background:var(--slate-light); border-left:4px solid var(--cosmic-purple); padding:1rem; border-radius:0 12px 12px 0;">
               <strong style="color:var(--midnight-blue); font-size:0.95rem;">Interactive Feature Check</strong><br>
@@ -1389,7 +1387,7 @@ function getEmployersTemplate() {
                 <div style="background:rgba(6, 182, 212, 0.15); color:var(--electric-cyan); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-weight:700; border:1px solid rgba(6, 182, 212, 0.3);">2</div>
                 <div>
                   <strong style="color:var(--pure-white); font-size:1rem; display:block;">Local Compliance</strong>
-                  <span style="font-size:0.85rem; color:rgba(255,255,255,0.65);">HAAD/DHA Clinical transfers, visa clearances, and labor card setups.</span>
+                  <span style="font-size:0.85rem; color:rgba(255,255,255,0.65);">DHA Clinical transfers, visa clearances, and labor card setups.</span>
                 </div>
               </div>
               <div style="display:flex; gap:var(--spacing-sm); align-items:flex-start;">
@@ -1416,7 +1414,7 @@ function getEmployersTemplate() {
               <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Pay only on placement success</li>
               <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Fully vetted candidate list</li>
               <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> 90-day rebate protection</li>
-              <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> UAE labor law alignment support</li>
+              <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Dubai labor law alignment support</li>
             </ul>
             <button onclick="navigateTo('contact')" class="btn btn-secondary" style="width:100%;">Select Package</button>
           </div>
@@ -1721,7 +1719,7 @@ function getCandidatesTemplate() {
               </div>
               <div class="dash-stat-card">
                 <span class="dash-stat-val">100%</span>
-                <span class="dash-stat-lbl">UAE Compliance</span>
+                <span class="dash-stat-lbl">Dubai Compliance</span>
               </div>
             </div>
             
@@ -1789,7 +1787,7 @@ function getBlogTemplate() {
       <div class="dot-grid"></div>
       <div class="container" style="text-align:center;">
         <span class="section-tag" style="color:var(--electric-cyan);">RECRUITMENT TRENDS</span>
-        <h1>Career Advice & UAE Insights</h1>
+        <h1>Career Advice & Dubai Insights</h1>
         <p style="max-width:600px; margin:0 auto; color:rgba(255,255,255,0.8);">Stay updated with the latest regulatory mandates, Golden Visa provisions, and resume optimization tips.</p>
       </div>
     </section>
@@ -1798,7 +1796,7 @@ function getBlogTemplate() {
       <div class="container">
         <div class="blog-filters">
           <button class="blog-filter-btn active" onclick="showNotification('Filters applied successfully')">All Articles</button>
-          <button class="blog-filter-btn" onclick="showNotification('Category: UAE Job Market loaded')">UAE Job Market</button>
+          <button class="blog-filter-btn" onclick="showNotification('Category: Dubai Job Market loaded')">Dubai Job Market</button>
           <button class="blog-filter-btn" onclick="showNotification('Category: CV & Interview Tips loaded')">CV & Interview Tips</button>
           <button class="blog-filter-btn" onclick="showNotification('Category: Executive Trends loaded')">Recruitment Trends</button>
         </div>
@@ -1834,7 +1832,7 @@ function getContactTemplate() {
               <span class="contact-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></span>
               <div>
                 <div class="contact-label">Dubai Office Location</div>
-                <p>345, Zone 2, Central Plaza, Dubai Investment Park 1, UAE</p>
+                <p>345, Zone 2, Central Plaza, Dubai Investment Park 1, Dubai</p>
               </div>
             </div>
             
