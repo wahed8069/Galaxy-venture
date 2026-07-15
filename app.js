@@ -6,7 +6,7 @@ const DEFAULT_JOBS = [
     "title": "uiux",
     "company": "waaaaa",
     "location": "Dubai",
-    "salary": "76767665 AED",
+    "salary": "76767665 INR",
     "type": "Full-time",
     "industry": "IT & Technology",
     "logo": "🏢",
@@ -17,7 +17,7 @@ const DEFAULT_JOBS = [
     "title": "Senior Software Engineer (Full Stack)",
     "company": "TechNova Dubai",
     "location": "Dubai",
-    "salary": "22,000 - 28,000 AED",
+    "salary": "22,000 - 28,000 INR",
     "type": "Full-time",
     "industry": "IT & Technology",
     "logo": "💻",
@@ -28,7 +28,7 @@ const DEFAULT_JOBS = [
     "title": "Registered Nurse",
     "company": "Emirates Health Clinic",
     "location": "Dubai",
-    "salary": "14,000 - 18,000 AED",
+    "salary": "14,000 - 18,000 INR",
     "type": "Full-time",
     "industry": "Healthcare",
     "logo": "🩺",
@@ -39,7 +39,7 @@ const DEFAULT_JOBS = [
     "title": "Operations Project Manager",
     "company": "Al-Futtaim Group",
     "location": "Dubai",
-    "salary": "18,000 - 24,000 AED",
+    "salary": "18,000 - 24,000 INR",
     "type": "Full-time",
     "industry": "Engineering",
     "logo": "⚙️",
@@ -50,7 +50,7 @@ const DEFAULT_JOBS = [
     "title": "Cloud Infrastructure Architect",
     "company": "GigaScale Cloud Solutions",
     "location": "Remote (Dubai)",
-    "salary": "30,000 - 35,000 AED",
+    "salary": "30,000 - 35,000 INR",
     "type": "Remote",
     "industry": "IT & Technology",
     "logo": "☁️",
@@ -61,7 +61,7 @@ const DEFAULT_JOBS = [
     "title": "F&B Manager",
     "company": "Jumeirah Group Resorts",
     "location": "Dubai",
-    "salary": "12,000 - 15,000 AED",
+    "salary": "12,000 - 15,000 INR",
     "type": "Full-time",
     "industry": "Hospitality",
     "logo": "🏨",
@@ -72,7 +72,7 @@ const DEFAULT_JOBS = [
     "title": "Site Structural Engineer",
     "company": "Arabtec Construction",
     "location": "Dubai",
-    "salary": "16,000 - 20,000 AED",
+    "salary": "16,000 - 20,000 INR",
     "type": "Contract",
     "industry": "Construction",
     "logo": "🏗️",
@@ -83,7 +83,7 @@ const DEFAULT_JOBS = [
     "title": "Petroleum Geologist",
     "company": "ADNOC Group",
     "location": "Dubai",
-    "salary": "25,000 - 32,000 AED",
+    "salary": "25,000 - 32,000 INR",
     "type": "Full-time",
     "industry": "Oil & Gas",
     "logo": "🛢️",
@@ -94,7 +94,7 @@ const DEFAULT_JOBS = [
     "title": "Logistics Operations Lead",
     "company": "DP World",
     "location": "Dubai",
-    "salary": "13,000 - 16,000 AED",
+    "salary": "13,000 - 16,000 INR",
     "type": "Full-time",
     "industry": "Logistics",
     "logo": "🚢",
@@ -105,7 +105,7 @@ const DEFAULT_JOBS = [
     "title": "Financial Analyst",
     "company": "Mashreq Bank",
     "location": "Dubai",
-    "salary": "15,000 - 19,000 AED",
+    "salary": "15,000 - 19,000 INR",
     "type": "Full-time",
     "industry": "Finance",
     "logo": "📊",
@@ -116,7 +116,7 @@ const DEFAULT_JOBS = [
     "title": "Senior Retail Store Manager",
     "company": "Chalhoub Group",
     "location": "Dubai",
-    "salary": "11,000 - 14,000 AED",
+    "salary": "11,000 - 14,000 INR",
     "type": "Full-time",
     "industry": "Retail",
     "logo": "🛍️",
@@ -127,7 +127,7 @@ const DEFAULT_JOBS = [
     "title": "Senior AI Research Scientist",
     "company": "Dubai AI Council",
     "location": "Dubai",
-    "salary": "35,000 - 45,000 AED",
+    "salary": "35,000 - 45,000 INR",
     "type": "Full-time",
     "industry": "IT & Technology",
     "logo": "🧠",
@@ -138,7 +138,7 @@ const DEFAULT_JOBS = [
     "title": "Lead Architect (Aviation Projects)",
     "company": "Dubai Airports",
     "location": "Dubai",
-    "salary": "28,000 - 34,000 AED",
+    "salary": "28,000 - 34,000 INR",
     "type": "Full-time",
     "industry": "Engineering",
     "logo": "✈️",
@@ -149,7 +149,7 @@ const DEFAULT_JOBS = [
     "title": "Chief Financial Officer (CFO)",
     "company": "Majid Al Futtaim",
     "location": "Dubai",
-    "salary": "55,000 - 70,000 AED",
+    "salary": "55,000 - 70,000 INR",
     "type": "Full-time",
     "industry": "Finance",
     "logo": "📈",
@@ -160,7 +160,7 @@ const DEFAULT_JOBS = [
     "title": "DHA General Practitioner",
     "company": "King's College Hospital",
     "location": "Dubai Marina, Dubai",
-    "salary": "20,000 - 26,000 AED",
+    "salary": "20,000 - 26,000 INR",
     "type": "Full-time",
     "industry": "Healthcare",
     "logo": "🏥",
@@ -171,7 +171,7 @@ const DEFAULT_JOBS = [
     "title": "Marine Operations Manager",
     "company": "Jebel Ali Port (DP World)",
     "location": "Dubai",
-    "salary": "18,000 - 22,000 AED",
+    "salary": "18,000 - 22,000 INR",
     "type": "Full-time",
     "industry": "Logistics",
     "logo": "⚓",
@@ -182,7 +182,7 @@ const DEFAULT_JOBS = [
     "title": "Regional Sales Manager",
     "company": "Chalhoub Group",
     "location": "Dubai",
-    "salary": "16,000 - 20,000 AED",
+    "salary": "16,000 - 20,000 INR",
     "type": "Full-time",
     "industry": "Retail",
     "logo": "💼",
@@ -1579,7 +1579,7 @@ async function handleEmployerJobPosting(event) {
   const title = document.getElementById('post-title').value;
   const industry = document.getElementById('post-industry').value;
   const location = document.getElementById('post-location').value;
-  const salary = document.getElementById('post-salary').value + ' AED';
+  const salary = document.getElementById('post-salary').value + ' INR';
   const reqs = document.getElementById('post-reqs').value;
   
   const localNewJob = {
@@ -2047,7 +2047,7 @@ function getEmployerDashboardTemplate() {
             <input type="text" id="post-location" class="form-control" placeholder="Dubai / Abu Dhabi" required>
           </div>
           <div class="form-group" style="margin-bottom:0;">
-            <label>Salary (AED/mo)</label>
+            <label>Salary (INR/mo)</label>
             <input type="text" id="post-salary" class="form-control" placeholder="E.g., 20,000 - 25,000" required>
           </div>
         </div>
