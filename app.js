@@ -622,6 +622,31 @@ function renderActiveView() {
   }
 }
 
+// --- HERO SEARCH HANDLERS ---
+function handleHeroSearch(event) {
+  event.preventDefault();
+  const query = document.getElementById('hero-search-input').value;
+  navigateTo('jobs');
+  setTimeout(() => {
+    const jobsSearch = document.getElementById('jobs-search-input');
+    if (jobsSearch) {
+      jobsSearch.value = query;
+      filterJobs();
+    }
+  }, 100);
+}
+
+function triggerHeroTagSearch(tagName) {
+  navigateTo('jobs');
+  setTimeout(() => {
+    const jobsSearch = document.getElementById('jobs-search-input');
+    if (jobsSearch) {
+      jobsSearch.value = tagName;
+      filterJobs();
+    }
+  }, 100);
+}
+
 // --- COMPONENT TEMPLATES ---
 
 // 1. HOME TEMPLATE
@@ -674,23 +699,89 @@ function getHomeTemplate() {
         <div class="glow-orb glow-orb-3"></div>
         <div class="dot-grid"></div>
       </div>
-      <div class="container hero-content">
-        <div class="badge-tag">
-          <span style="font-size:0.65rem; color:#06b6d4;">✦</span> Premium UAE Recruitment & Global Search
-        </div>
-        <h1 class="hero-title">Connecting Talent with Opportunity <span class="gradient-text"><br>Across the UAE and Beyond</span></h1>
-        <p class="hero-subtitle">Galaxy Venture helps professionals discover rewarding careers while enabling companies to hire exceptional talent efficiently.</p>
-        <div class="hero-ctas">
-          <button onclick="navigateTo('jobs')" class="btn btn-primary">Find Jobs <svg style="width:16px;height:16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
-          <button onclick="navigateTo('employers')" class="btn btn-secondary">Hire Talent <svg style="width:16px;height:16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></button>
+      
+      <div class="container hero-container-grid">
+        <!-- Left Column: Content & Search -->
+        <div class="hero-left">
+          <div class="badge-tag">
+            <span style="font-size:0.65rem; color:#06b6d4;">✦</span> Premium UAE Recruitment & Global Search
+          </div>
+          <h1 class="hero-title">
+            Connecting Talent with 
+            <span class="highlight-wrapper">
+              Opportunity
+              <svg class="highlight-svg" viewBox="0 0 150 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 6 25 C 20 6, 130 6, 144 25 C 130 44, 20 44, 6 25" stroke="#fbbf24" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+            <span class="gradient-text"><br>Across the UAE and Beyond</span>
+          </h1>
+          <p class="hero-subtitle" style="text-align: left; margin-left: 0; margin-right: 0;">
+            Galaxy Venture helps premium professionals discover rewarding careers while enabling companies to hire exceptional talent efficiently.
+          </p>
+          
+          <!-- Hero Search Box (Parallel Style) -->
+          <form onsubmit="handleHeroSearch(event)" class="hero-search-form">
+            <div class="hero-search-input-wrap">
+              <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+              <input type="text" id="hero-search-input" placeholder="Search jobs (e.g., Nurse, DevOps)..." required>
+            </div>
+            <button type="submit" class="hero-search-btn">
+              Search <svg style="width:16px;height:16px;margin-left:0.25rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </button>
+          </form>
+          
+          <!-- Suggested Tags -->
+          <div class="hero-tag-pills">
+            <span class="hero-tag-label">Popular:</span>
+            <span class="hero-tag-pill" onclick="triggerHeroTagSearch('IT & Technology')">IT & Tech</span>
+            <span class="hero-tag-pill" onclick="triggerHeroTagSearch('Healthcare')">Healthcare</span>
+            <span class="hero-tag-pill" onclick="triggerHeroTagSearch('Engineering')">Engineering</span>
+            <span class="hero-tag-pill" onclick="triggerHeroTagSearch('Finance')">Finance</span>
+          </div>
         </div>
         
-        <!-- Abstract Galaxy Illustration -->
-        <div class="galaxy-illustration">
-          <div class="galaxy-center"></div>
-          <div class="galaxy-orbit orbit-1"><div class="planet planet-cyan"></div></div>
-          <div class="galaxy-orbit orbit-2"><div class="planet planet-purple"></div></div>
-          <div class="galaxy-orbit orbit-3"><div class="planet planet-dark"></div></div>
+        <!-- Right Column: Hero Image -->
+        <div class="hero-right">
+          <div class="hero-image-container">
+            <img src="hero_talent.png" alt="Premium Talent Recruitment Dubai" class="hero-main-img">
+            <div class="hero-floating-card card-candidates">
+              <div class="floating-avatar">👤</div>
+              <div>
+                <div style="font-weight:700; font-size:0.85rem; color:var(--midnight-blue);">DHA Clinical Nurse</div>
+                <div style="font-size:0.7rem; color:var(--slate-text);">Placed in Dubai Healthcare City</div>
+              </div>
+            </div>
+            <div class="hero-floating-card card-employers">
+              <div class="floating-avatar" style="background:var(--cosmic-purple-light); color:var(--cosmic-purple);">🏢</div>
+              <div>
+                <div style="font-weight:700; font-size:0.85rem; color:var(--midnight-blue);">Mandate Completed</div>
+                <div style="font-size:0.7rem; color:var(--slate-text);">MOHRE compliance cleared</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Partner Marquee (Parallel Style) -->
+      <div class="partner-marquee-container">
+        <div class="marquee-track">
+          <!-- Double set of items for seamless loop -->
+          <div class="marquee-item">EMAAR</div>
+          <div class="marquee-item">ALADAR</div>
+          <div class="marquee-item">MOHRE</div>
+          <div class="marquee-item">DHA</div>
+          <div class="marquee-item">DP WORLD</div>
+          <div class="marquee-item">NMC HEALTH</div>
+          <div class="marquee-item">DAMAC</div>
+          <!-- Repeat -->
+          <div class="marquee-item">EMAAR</div>
+          <div class="marquee-item">ALADAR</div>
+          <div class="marquee-item">MOHRE</div>
+          <div class="marquee-item">DHA</div>
+          <div class="marquee-item">DP WORLD</div>
+          <div class="marquee-item">NMC HEALTH</div>
+          <div class="marquee-item">DAMAC</div>
         </div>
       </div>
     </section>
