@@ -481,17 +481,27 @@ function handleJobApplicationSubmit(event) {
     return;
   }
 
+  // Construct form data to submit to Apps Script
+  const formData = new URLSearchParams();
+  formData.append('date', new Date().toLocaleString());
+  formData.append('name', name);
+  formData.append('email', email);
+  formData.append('phone', phone);
+  formData.append('location', location);
+  formData.append('jobTitle', jobTitle);
+  formData.append('experience', experience);
+
   // Send request using fetch with no-cors mode to avoid CORS preflight blockers in Apps Script
   fetch(scriptUrl, {
     method: 'POST',
     mode: 'no-cors',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/x-www-form-urlencoded'
     },
-    body: JSON.stringify(payload)
+    body: formData.toString()
   })
   .then(() => {
-    showNotification('Application submitted successfully to Google Sheet!');
+    showNotification('Application submitted successfully!');
   })
   .catch(err => {
     console.error('Error submitting application:', err);
