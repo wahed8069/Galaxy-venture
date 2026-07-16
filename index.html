@@ -195,29 +195,37 @@
     </div>
   </footer>
 
-  <!-- RESUME UPLOAD MODAL -->
+  <!-- JOB APPLICATION MODAL -->
   <div class="modal-overlay" id="upload-modal-overlay">
     <div class="modal-content">
       <div class="modal-close" onclick="closeResumeUploadModal()">✕</div>
-      <h3 class="modal-title">Upload Candidate Profile</h3>
-      <p class="modal-subtitle">Our CV parsing engine scans for technical skills, experience matrices, and Europe compliance layouts.</p>
+      <h3 class="modal-title">Apply for Job</h3>
+      <p class="modal-subtitle">Enter your professional details to initiate your application via WhatsApp.</p>
       
-      <div class="upload-drag-area" id="upload-drag-area">
-        <div class="upload-icon">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+      <form onsubmit="handleJobApplicationSubmit(event)" style="margin-top: 1rem;">
+        <div class="form-group">
+          <label>Candidate Name</label>
+          <input type="text" id="app-name" class="form-control" placeholder="E.g., Hamdan Al-Neyadi" required>
         </div>
-        <p style="font-weight:600; color:var(--midnight-blue);">Drag and drop your resume file here</p>
-        <p style="font-size:0.8rem; color:var(--slate-text); margin-top:0.2rem;">Accepts PDF, DOCX, or TXT (Max 5MB)</p>
-        <button class="btn btn-secondary" style="margin-top:1rem; padding:0.4rem 1rem; font-size:0.8rem;">Browse Files</button>
-        <input type="file" id="resume-file-input" style="display:none;" accept=".pdf,.doc,.docx,.txt">
-      </div>
-      
-      <div class="upload-status-box" id="upload-status-box">
-        <div class="upload-progress-bar">
-          <div class="upload-progress-fill" id="upload-progress-fill"></div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="app-email" class="form-control" placeholder="hamdan@gmail.com" required>
         </div>
-        <p id="upload-status-label" style="font-size:0.85rem; font-weight:600; color:var(--slate-text); text-align:center;">Initiating upload sequence...</p>
-      </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" id="app-phone" class="form-control" placeholder="E.g., +91 85890 26612" required>
+        </div>
+        <div class="form-group">
+          <label>Job Title</label>
+          <input type="text" id="app-job-title" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+          <label>Experience / Brief Summary</label>
+          <input type="text" id="app-experience" class="form-control" placeholder="E.g., 5 years in Software Engineering" required>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; margin-top:1.5rem;">Apply Now via WhatsApp</button>
+      </form>
     </div>
   </div>
 

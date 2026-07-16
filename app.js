@@ -381,16 +381,26 @@ function showNotification(message) {
   }, 4000);
 }
 
-// --- RESUME UPLOAD SIMULATOR ---
+// --- JOB APPLICATION FORM HANDLERS ---
 function openResumeUploadModal(jobId = null) {
   AppState.activeJobToApply = jobId;
   const overlay = document.getElementById('upload-modal-overlay');
   overlay.classList.add('open');
   
-  // Reset upload box view
-  document.getElementById('upload-drag-area').style.display = 'block';
-  document.getElementById('upload-status-box').style.display = 'none';
-  document.getElementById('upload-progress-fill').style.width = '0%';
+  // Pre-fill profile details if available
+  document.getElementById('app-name').value = AppState.candidateProfile.fullName || '';
+  document.getElementById('app-email').value = AppState.candidateProfile.email || '';
+  document.getElementById('app-phone').value = AppState.candidateProfile.phone || '';
+  document.getElementById('app-experience').value = '';
+  
+  if (jobId) {
+    const job = JOBS_DATABASE.find(j => j.id === jobId);
+    if (job) {
+      document.getElementById('app-job-title').value = job.title;
+    }
+  } else {
+    document.getElementById('app-job-title').value = 'General Sourcing';
+  }
 }
 
 function closeResumeUploadModal() {
@@ -399,82 +409,62 @@ function closeResumeUploadModal() {
   AppState.activeJobToApply = null;
 }
 
-function handleResumeFileSelect(file) {
-  if (!file) return;
+function handleJobApplicationSubmit(event) {
+  event.preventDefault();
   
-  const dragArea = document.getElementById('upload-drag-area');
-  const statusBox = document.getElementById('upload-status-box');
-  const progressFill = document.getElementById('upload-progress-fill');
-  const statusLabel = document.getElementById('upload-status-label');
+  const name = document.getElementById('app-name').value.trim();
+  const email = document.getElementById('app-email').value.trim();
+  const phone = document.getElementById('app-phone').value.trim();
+  const jobTitle = document.getElementById('app-job-title').value.trim();
+  const experience = document.getElementById('app-experience').value.trim();
   
-  dragArea.style.display = 'none';
-  statusBox.style.display = 'block';
+  // Update state candidate profile
+  AppState.candidateProfile.fullName = name;
+  AppState.candidateProfile.email = email;
+  AppState.candidateProfile.phone = phone;
   
-  let progress = 0;
-  statusLabel.textContent = `Uploading ${file.name}...`;
-  
-  const uploadTimer = setInterval(() => {
-    progress += 8;
-    if (progress > 100) progress = 100;
-    progressFill.style.width = `${progress}%`;
+  if (AppState.activeJobToApply) {
+    const job = JOBS_DATABASE.find(j => j.id === AppState.activeJobToApply);
     
-    if (progress === 100) {
-      clearInterval(uploadTimer);
-      
-      // Step 2: Scanning
-      statusLabel.textContent = "Scanning for Europe compliance standard...";
-      setTimeout(() => {
-        // Step 3: Parsing
-        statusLabel.textContent = "Extracting skills and credentials...";
-        setTimeout(() => {
-          // Success
-          statusLabel.innerHTML = `<span style="color:#10b981; font-weight:700;">✓ Parsing Complete!</span>`;
-          
-          AppState.candidateProfile.resumeName = file.name;
-          
-          // If associated with a job application
-          if (AppState.activeJobToApply) {
-            const job = JOBS_DATABASE.find(j => j.id === AppState.activeJobToApply);
-            
-            // Add to applied jobs
-            AppState.submittedApplications.push({
-              jobId: job.id,
-              date: new Date().toISOString().split('T')[0],
-              status: 'Applied'
-            });
-            
-            // Add to employer ATS dashboard for testing feedback
-            AppState.atsCandidates.push({
-              id: Date.now(),
-              name: AppState.candidateProfile.fullName,
-              role: job.title,
-              stage: 'Applied',
-              date: new Date().toISOString().split('T')[0]
-            });
-            
-            showNotification(`Applied successfully for ${job.title}!`);
-
-            // Generate WhatsApp message and redirect to WhatsApp number 8589026612
-            const message = `Hello, I'd like to apply for the job:\n\n*Job:* ${job.title}\n*Company:* ${job.company}\n*Salary:* ${job.salary}\n*Location:* ${job.location}\n\n*Candidate Details:*\n- *Name:* ${AppState.candidateProfile.fullName}\n- *Email:* ${AppState.candidateProfile.email}\n- *Phone:* ${AppState.candidateProfile.phone}\n- *Resume:* ${AppState.candidateProfile.resumeName}`;
-            const whatsappUrl = `https://wa.me/918589026612?text=${encodeURIComponent(message)}`;
-            
-            setTimeout(() => {
-              window.open(whatsappUrl, '_blank');
-            }, 1000);
-          } else {
-            showNotification("CV uploaded and candidate profile updated.");
-          }
-          
-          setTimeout(() => {
-            closeResumeUploadModal();
-            // Redirect to Jobs page
-            navigateTo('jobs');
-          }, 1000);
-          
-        }, 1200);
-      }, 1000);
-    }
-  }, 150);
+    // Add to applied jobs
+    AppState.submittedApplications.push({
+      jobId: job.id,
+      date: new Date().toISOString().split('T')[0],
+      status: 'Applied'
+    });
+    
+    // Add to employer ATS dashboard
+    AppState.atsCandidates.push({
+      id: Date.now(),
+      name: name,
+      role: job.title,
+      stage: 'Applied',
+      date: new Date().toISOString().split('T')[0]
+    });
+    
+    showNotification(`Applied successfully for ${job.title}!`);
+    
+    // Generate WhatsApp URL
+    const message = `Hello, I'd like to apply for the job:\n\n*Job:* ${job.title}\n*Company:* ${job.company}\n*Salary:* ${job.salary}\n*Location:* ${job.location}\n\n*Candidate Details:*\n- *Name:* ${name}\n- *Email:* ${email}\n- *Phone:* ${phone}\n- *Experience:* ${experience}`;
+    const whatsappUrl = `https://wa.me/918589026612?text=${encodeURIComponent(message)}`;
+    
+    setTimeout(() => {
+      window.open(whatsappUrl, '_blank');
+      closeResumeUploadModal();
+      navigateTo('jobs');
+    }, 1000);
+  } else {
+    showNotification("General application submitted!");
+    
+    // Generate General WhatsApp URL
+    const message = `Hello, I'd like to submit a general job application.\n\n*Candidate Details:*\n- *Name:* ${name}\n- *Email:* ${email}\n- *Phone:* ${phone}\n- *Experience:* ${experience}`;
+    const whatsappUrl = `https://wa.me/918589026612?text=${encodeURIComponent(message)}`;
+    
+    setTimeout(() => {
+      window.open(whatsappUrl, '_blank');
+      closeResumeUploadModal();
+    }, 1000);
+  }
 }
 
 // --- AI SEARCH ASSISTANT DRAWER ---
