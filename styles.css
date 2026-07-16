@@ -288,16 +288,16 @@ header {
   width: 100%;
   height: 80px;
   z-index: 100;
-  background: var(--glass-bg);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  border-bottom: 1px solid var(--glass-border);
+  background: var(--pure-white);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: 1px solid var(--slate-border);
   transition: all var(--transition-medium);
 }
 
 header.scrolled {
   height: 70px;
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--pure-white);
   box-shadow: var(--shadow-sm);
 }
 
