@@ -323,8 +323,7 @@ const AppState = {
   ],
   activeJobToApply: null,
   activeCarouselIndex: 0,
-  adminActiveTab: 'pipeline',
-  googleSheetScriptUrl: 'https://script.google.com/macros/s/AKfycbwK70CMRSJI9fG4SiEvZFJ2yTCxTsBB6Aj92ML4fyHnYtDYA4CeYXhOaZ02swKPgDY/exec'
+  adminActiveTab: 'pipeline'
 };
 
 // --- CLIENT-SIDE ROUTER ---
@@ -392,7 +391,7 @@ function openResumeUploadModal(jobId = null) {
   document.getElementById('app-name').value = AppState.candidateProfile.fullName || '';
   document.getElementById('app-email').value = AppState.candidateProfile.email || '';
   document.getElementById('app-phone').value = AppState.candidateProfile.phone || '';
-  document.getElementById('app-location').value = AppState.candidateProfile.location || '';
+  document.getElementById('app-country').value = AppState.candidateProfile.country || '';
   document.getElementById('app-experience').value = '';
   
   if (jobId) {
@@ -417,103 +416,80 @@ function handleJobApplicationSubmit(event) {
   const name = document.getElementById('app-name').value.trim();
   const email = document.getElementById('app-email').value.trim();
   const phone = document.getElementById('app-phone').value.trim();
-  const location = document.getElementById('app-location').value.trim();
+  const country = document.getElementById('app-country').value.trim();
   const jobTitle = document.getElementById('app-job-title').value.trim();
   const experience = document.getElementById('app-experience').value.trim();
   
-  // Update state candidate profile
-  AppState.candidateProfile.fullName = name;
-  AppState.candidateProfile.email = email;
-  AppState.candidateProfile.phone = phone;
-  AppState.candidateProfile.location = location;
-  
-  if (AppState.activeJobToApply) {
-    const job = JOBS_DATABASE.find(j => j.id === AppState.activeJobToApply);
-    
-    // Add to applied jobs
-    AppState.submittedApplications.push({
-      jobId: job.id,
-      date: new Date().toISOString().split('T')[0],
-      status: 'Applied'
-    });
-    
-    // Add to employer ATS dashboard
-    AppState.atsCandidates.push({
-      id: Date.now(),
-      name: name,
-      role: job.title,
-      stage: 'Applied',
-      date: new Date().toISOString().split('T')[0]
-    });
-  }
-
-  // Visual feedback: disabling submit button
-  const form = event.target;
-  const submitBtn = form.querySelector('button[type="submit"]');
-  const originalText = submitBtn.textContent;
+  const submitBtn = event.target.querySelector('button[type="submit"]');
+  const originalBtnText = submitBtn.textContent;
   submitBtn.disabled = true;
-  submitBtn.textContent = 'Submitting...';
+  submitBtn.textContent = 'Submitting application...';
 
-  // Construct payload
   const payload = {
-    date: new Date().toLocaleString(),
-    name: name,
-    email: email,
-    phone: phone,
-    location: location,
-    jobTitle: jobTitle,
-    experience: experience
+    name,
+    email,
+    phone,
+    country,
+    jobTitle,
+    experience
   };
-
-  const scriptUrl = AppState.googleSheetScriptUrl;
-
-  if (!scriptUrl || scriptUrl.includes('YOUR_GOOGLE_SCRIPT_URL')) {
-    console.warn('Google Sheet Script URL is not configured. Logging data:', payload);
-    setTimeout(() => {
-      showNotification('Application submitted successfully! (Configuring Sheet...)');
-      submitBtn.disabled = false;
-      submitBtn.textContent = originalText;
-      closeResumeUploadModal();
-      if (AppState.activeJobToApply) {
-        navigateTo('jobs');
-      }
-    }, 1000);
-    return;
-  }
-
-  // Construct form data to submit to Apps Script
-  const formData = new URLSearchParams();
-  formData.append('date', new Date().toLocaleString());
-  formData.append('name', name);
-  formData.append('email', email);
-  formData.append('phone', phone);
-  formData.append('location', location);
-  formData.append('jobTitle', jobTitle);
-  formData.append('experience', experience);
-
-  // Send request using fetch with no-cors mode to avoid CORS preflight blockers in Apps Script
-  fetch(scriptUrl, {
+  
+  fetch('/api/applications', {
     method: 'POST',
-    mode: 'no-cors',
     headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/json'
     },
-    body: formData.toString()
+    body: JSON.stringify(payload)
   })
-  .then(() => {
-    showNotification('Application submitted successfully!');
+  .then(res => res.json())
+  .then(data => {
+    submitBtn.disabled = false;
+    submitBtn.textContent = originalBtnText;
+
+    if (data.success) {
+      // Update state candidate profile
+      AppState.candidateProfile.fullName = name;
+      AppState.candidateProfile.email = email;
+      AppState.candidateProfile.phone = phone;
+      AppState.candidateProfile.country = country;
+
+      if (AppState.activeJobToApply) {
+        const job = JOBS_DATABASE.find(j => j.id === AppState.activeJobToApply);
+        
+        // Add to applied jobs
+        AppState.submittedApplications.push({
+          jobId: job.id,
+          date: new Date().toISOString().split('T')[0],
+          status: 'Applied'
+        });
+        
+        // Add to employer ATS dashboard
+        AppState.atsCandidates.push({
+          id: Date.now(),
+          name: name,
+          role: job.title,
+          stage: 'Applied',
+          date: new Date().toISOString().split('T')[0]
+        });
+        
+        showNotification(`Applied successfully for ${job.title}!`);
+      } else {
+        showNotification("Application submitted successfully!");
+      }
+      
+      setTimeout(() => {
+        closeResumeUploadModal();
+        navigateTo('jobs');
+      }, 1200);
+    } else {
+      showNotification(`Error: ${data.error || 'Failed to submit application'}`);
+    }
   })
   .catch(err => {
-    console.error('Error submitting application:', err);
-    showNotification('Application submitted successfully!');
-  })
-  .finally(() => {
     submitBtn.disabled = false;
-    submitBtn.textContent = originalText;
-    closeResumeUploadModal();
-    if (AppState.activeJobToApply) {
-      navigateTo('jobs');
-    }
+    submitBtn.textContent = originalBtnText;
+    console.error('Error submitting application:', err);
+    showNotification('Network error submitting application. Please try again.');
   });
 }
 
