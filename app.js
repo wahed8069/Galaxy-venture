@@ -243,6 +243,38 @@ async function fetchApplicationsFromServer() {
   }
 }
 
+async function toggleFollowCandidate(id) {
+  // Update locally first for instant responsive UI
+  const localIndex = AppState.appliedSubmissions.findIndex(sub => sub.id === id);
+  if (localIndex > -1) {
+    AppState.appliedSubmissions[localIndex].followed = !AppState.appliedSubmissions[localIndex].followed;
+    localStorage.setItem('galaxy_applied_submissions', JSON.stringify(AppState.appliedSubmissions));
+    renderActiveView();
+  }
+
+  if (!ADMIN_SESSION_TOKEN) return;
+  try {
+    const res = await fetch(`/api/applications/${id}/toggle-follow`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${ADMIN_SESSION_TOKEN}`
+      }
+    });
+    if (res.ok) {
+      const data = await res.json();
+      if (data.success) {
+        if (AppState.appliedSubmissions[localIndex]) {
+          AppState.appliedSubmissions[localIndex].followed = data.followed;
+          localStorage.setItem('galaxy_applied_submissions', JSON.stringify(AppState.appliedSubmissions));
+          renderActiveView();
+        }
+      }
+    }
+  } catch (err) {
+    console.error("Failed to toggle follow status on backend:", err);
+  }
+}
+
 const BLOGS_DATABASE = [
   { id: 1, title: 'Navigating the Golden Visa: Europe Job Market Insights', category: 'Market', date: 'June 18, 2026', readTime: '5 min read', excerpt: 'Understand how the updated Golden Visa rules in Europe impact professional recruitment and open new residency pathways.', author: 'Fatima Al-Suwaidi', icon: '🔑' },
   { id: 2, title: 'How to Optimize Your CV for Applicant Tracking Systems', category: 'Tips', date: 'May 29, 2026', readTime: '4 min read', excerpt: 'Europe companies rely heavily on AI scanning tools. Learn how to format and inject key parameters to pass structural candidate filters.', author: 'John Davis', icon: '📝' },
@@ -2184,7 +2216,7 @@ function getEmployerDashboardTemplate() {
     `;
   } else if (currentTab === 'applied-submissions') {
     const rowsHTML = AppState.appliedSubmissions.map(sub => `
-      <tr style="border-bottom: 1px solid #e2e8f0;">
+      <tr style="border-bottom: 1px solid #e2e8f0; ${sub.followed ? 'background-color: #f0fdf4;' : ''}">
         <td style="border: 1px solid #e2e8f0; padding: 0.6rem 0.75rem; font-size: 0.8rem; color: var(--midnight-blue); font-weight: 500;">${sub.name}</td>
         <td style="border: 1px solid #e2e8f0; padding: 0.6rem 0.75rem; font-size: 0.8rem; color: var(--slate-text);">${sub.email}</td>
         <td style="border: 1px solid #e2e8f0; padding: 0.6rem 0.75rem; font-size: 0.8rem; color: var(--slate-text);">${sub.phone}</td>
@@ -2192,6 +2224,11 @@ function getEmployerDashboardTemplate() {
         <td style="border: 1px solid #e2e8f0; padding: 0.6rem 0.75rem; font-size: 0.8rem; color: var(--midnight-blue); font-weight: 600;">${sub.jobTitle}</td>
         <td style="border: 1px solid #e2e8f0; padding: 0.6rem 0.75rem; font-size: 0.8rem; color: var(--slate-text);">${sub.experience}</td>
         <td style="border: 1px solid #e2e8f0; padding: 0.6rem 0.75rem; font-size: 0.8rem; color: var(--slate-text);">${sub.date}</td>
+        <td style="border: 1px solid #e2e8f0; padding: 0.6rem 0.75rem; text-align: center;">
+          <button onclick="toggleFollowCandidate(${sub.id})" style="padding: 0.25rem 0.6rem; font-size: 0.75rem; font-weight: 600; color: ${sub.followed ? '#ef4444' : '#0284c7'}; background: ${sub.followed ? '#fef2f2' : '#f0f9ff'}; border: 1px solid ${sub.followed ? '#fca5a5' : '#e0f2fe'}; border-radius: 6px; cursor: pointer; transition: all 0.2s;">
+            ${sub.followed ? 'No Follow' : 'Follow'}
+          </button>
+        </td>
       </tr>
     `).join('');
 
@@ -2210,10 +2247,11 @@ function getEmployerDashboardTemplate() {
               <th style="border: 1px solid #cbd5e1; padding: 0.6rem 0.75rem; font-size: 0.8rem; font-weight: 600; color: #475569;">Job Title</th>
               <th style="border: 1px solid #cbd5e1; padding: 0.6rem 0.75rem; font-size: 0.8rem; font-weight: 600; color: #475569;">Experience</th>
               <th style="border: 1px solid #cbd5e1; padding: 0.6rem 0.75rem; font-size: 0.8rem; font-weight: 600; color: #475569;">Applied Date</th>
+              <th style="border: 1px solid #cbd5e1; padding: 0.6rem 0.75rem; font-size: 0.8rem; font-weight: 600; color: #475569; text-align: center;">Actions</th>
             </tr>
           </thead>
           <tbody>
-            ${rowsHTML || `<tr><td colspan="7" style="text-align: center; padding: 2rem; color: var(--slate-text);">No applications submitted yet.</td></tr>`}
+            ${rowsHTML || `<tr><td colspan="8" style="text-align: center; padding: 2rem; color: var(--slate-text);">No applications submitted yet.</td></tr>`}
           </tbody>
         </table>
       </div>

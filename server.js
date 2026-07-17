@@ -265,6 +265,36 @@ app.get('/api/applications', (req, res) => {
   res.json(apps);
 });
 
+// 7. Toggle Application Follow Status (Authenticated)
+app.post('/api/applications/:id/toggle-follow', (req, res) => {
+  const authHeader = req.headers.authorization;
+  if (!authHeader || authHeader !== `Bearer ${ADMIN_TOKEN}`) {
+    return res.status(401).json({
+      success: false,
+      error: 'Unauthorized: Invalid or missing administrator token.'
+    });
+  }
+  
+  const id = parseInt(req.params.id);
+  const apps = readApplications();
+  const appIndex = apps.findIndex(a => a.id === id);
+  
+  if (appIndex > -1) {
+    apps[appIndex].followed = !apps[appIndex].followed;
+    if (writeApplications(apps)) {
+      return res.json({
+        success: true,
+        followed: apps[appIndex].followed
+      });
+    }
+  }
+  
+  res.status(400).json({
+    success: false,
+    error: 'Application not found or write failed.'
+  });
+});
+
 // Serve main client
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
