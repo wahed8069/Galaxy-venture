@@ -11,8 +11,8 @@ app.use(express.json());
 app.use(express.static(__dirname)); // Serve frontend static assets
 
 // Admin Credentials
-const ADMIN_USER = 'admin';
-const ADMIN_PASS = 'password';
+const ADMIN_USER = 'galaxyadmin';
+const ADMIN_PASS = 'Galaxy@2026';
 const ADMIN_TOKEN = 'galaxy-ventures-admin-session-token-2026';
 
 // Helper: Read jobs from JSON

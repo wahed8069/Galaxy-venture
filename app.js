@@ -1722,7 +1722,7 @@ async function handleAdminLoginSubmit(event) {
     }
   } catch (err) {
     console.warn("Backend login failed/offline. Trying local client-side authentication fallback:", err);
-    if (user === 'admin' && pass === 'password') {
+    if (user === 'galaxyadmin' && pass === 'Galaxy@2026') {
       ADMIN_SESSION_TOKEN = 'galaxy-ventures-admin-session-token-2026';
       localStorage.setItem('admin_token', ADMIN_SESSION_TOKEN);
       showNotification("Authenticated successfully (Client-side fallback)!");
