@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
 /* --- DESIGN SYSTEM TOKENS --- */
 :root {
@@ -23,8 +23,8 @@
   --glass-blur: 16px;
   
   /* Typography */
-  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: 'Montserrat', 'Helvetica', 'Arial', 'Lucida', sans-serif;
+  --font-body: 'Montserrat', 'Helvetica', 'Arial', 'Lucida', sans-serif;
   
   /* Spacing */
   --spacing-xs: 0.5rem;
