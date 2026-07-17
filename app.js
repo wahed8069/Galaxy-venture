@@ -1,3 +1,5 @@
+const GOOGLE_SHEET_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyxzYIeNL-oRWsMQoZW7AyuRqrlr9nHOImVsNdqB8oQVaHFuK7QB04Xd4skP1N1-P8/exec";
+
 // --- MOCK DATABASE SYSTEMS ---
 
 const DEFAULT_JOBS = [
@@ -223,11 +225,7 @@ async function fetchApplicationsFromServer() {
 
   if (!ADMIN_SESSION_TOKEN) return;
   try {
-    const res = await fetch('/api/applications', {
-      headers: {
-        'Authorization': `Bearer ${ADMIN_SESSION_TOKEN}`
-      }
-    });
+    const res = await fetch(GOOGLE_SHEET_SCRIPT_URL);
     if (res.ok) {
       const data = await res.json();
       if (data && Array.isArray(data)) {
@@ -239,7 +237,7 @@ async function fetchApplicationsFromServer() {
       }
     }
   } catch (err) {
-    console.error("Failed to load applications from backend:", err);
+    console.error("Failed to load applications from Google Sheet:", err);
   }
 }
 
@@ -254,11 +252,15 @@ async function toggleFollowCandidate(id) {
 
   if (!ADMIN_SESSION_TOKEN) return;
   try {
-    const res = await fetch(`/api/applications/${id}/toggle-follow`, {
+    const res = await fetch(GOOGLE_SHEET_SCRIPT_URL, {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${ADMIN_SESSION_TOKEN}`
-      }
+        'Content-Type': 'text/plain'
+      },
+      body: JSON.stringify({
+        action: 'toggle-follow',
+        id: id
+      })
     });
     if (res.ok) {
       const data = await res.json();
@@ -271,7 +273,7 @@ async function toggleFollowCandidate(id) {
       }
     }
   } catch (err) {
-    console.error("Failed to toggle follow status on backend:", err);
+    console.error("Failed to toggle follow status on Google Sheet:", err);
   }
 }
 
@@ -536,11 +538,11 @@ function handleJobApplicationSubmit(event) {
   });
   localStorage.setItem('galaxy_applied_submissions', JSON.stringify(AppState.appliedSubmissions));
 
-  // Post to backend database
-  fetch('/api/applications', {
+  // Post to Google Sheets script Web App
+  fetch(GOOGLE_SHEET_SCRIPT_URL, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'text/plain'
     },
     body: JSON.stringify({
       name,
@@ -553,10 +555,10 @@ function handleJobApplicationSubmit(event) {
   })
   .then(res => res.json())
   .then(data => {
-    console.log("Application saved to backend:", data);
+    console.log("Application saved to Google Sheet:", data);
   })
   .catch(err => {
-    console.error("Failed to save application to backend:", err);
+    console.error("Failed to save application to Google Sheet:", err);
   });
   
   if (AppState.activeJobToApply) {
