@@ -491,7 +491,7 @@ function navigateTo(pageId, pushState = true) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
   
   if (pushState) {
-    const path = pageId === 'home' ? '/home' : `/${pageId}`;
+    const path = pageId === 'home' ? '/' : `/${pageId}`;
     if (window.location.pathname !== path) {
       history.pushState({ pageId }, '', path);
     }
